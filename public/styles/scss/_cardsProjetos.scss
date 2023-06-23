@@ -1,0 +1,10 @@
+.container__card{
+  margin: 0 1rem;
+  .card__video, iframe{
+    width: 100%;
+  }
+  background-color: $beige;
+  .card__description{
+    padding: 1rem;
+  }
+}

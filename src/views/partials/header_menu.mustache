@@ -1,0 +1,41 @@
+<!-- HEADER / MENU -->
+<header id="header" class="container__header flex flex__between">
+  <div class="nav__logo nav__list__item">
+    <a href="/" class="list__item__link">
+      <img
+        src="/images/logo__black.svg"
+        onload="SVGInject(this)"
+        alt="Logo em R cor preta"
+      />
+    </a>
+  </div>
+
+  <nav class="header__nav flex flex__between">
+    <!-- BTN MOBILE -->
+    <button
+      class="btn__mobile"
+      aria-controls="menu"
+      aria-haspopup="true"
+      aria-label="Abrir Menu"
+      aria-expanded="false"
+    >
+      Menu
+      <span id="hamburguer"></span>
+    </button>
+
+    <ul id="menu__list" class="nav__list" role="menu">
+      <li class="nav__list__item">
+        <a href="/" class="list__item__link">Home</a>
+      </li>
+      <li class="nav__list__item">
+        <a href="/sobre" class="list__item__link">Sobre</a>
+      </li>
+      <li class="nav__list__item">
+        <a href="/projetos" class="list__item__link">Projetos</a>
+      </li>
+      <li class="nav__list__item">
+        <a href="/blog" class="list__item__link">Blog</a>
+      </li>
+    </ul>
+  </nav>
+</header>

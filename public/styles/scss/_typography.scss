@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'MangoGrotesque';
+  src: url('../fonts/Humane-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Humane-Bold.otf') format('opentype'); /* Safari, Android, iOS */
+           font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+*{
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+}
+
+a{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $black;
+}
+
+h1{
+  font-family: 'MangoGrotesque', sans-serif;
+  font-size: 10rem;
+  text-align: center;
+  color: $beige;
+  text-transform: uppercase;
+}
+
+button{
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card__description{
+  p{
+    margin-top: 5px;
+  }
+  h3 a {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.container__description p{
+  font-size: 1.125rem;
+  color: $beige__light;
+}
+
+
+.container__insta {
+  h1{
+    position: relative;
+    color: $black__light;
+    font-size: 8.125rem;
+    span{
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 550;
+      text-transform: lowercase;
+      position: absolute;
+      left: 0px;
+      bottom: -1px;
+    }
+  }
+  p{
+    padding-top: 1.5rem;
+  }
+}
+
+//BTN INSTA
+.btn{
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: $bg__red;
+  box-shadow: -1px 2px 8px 1px $black__light;
+  position: relative;
+  transition: all 0.3s ease;
+  outline: none;
+  a{
+    display: block;
+    width: 100%;
+    padding: .7rem;
+    color: $beige;
+    transition: all 0.3s ease;
+  }
+}
+
+
+.btn:hover {
+  background: transparent;
+  box-shadow: none;
+
+  a {
+    color: $bg__red;
+    letter-spacing: .5rem;
+  }
+}
+
+.btn:before,
+.btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  background: $bg__red;
+  box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+
+.btn:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+
+.container__footer a{
+  color: $beige;
+  font-size: 1rem;
+}
