@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/server.js",
-    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
     "dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "author": "Leonardo (dev)",
