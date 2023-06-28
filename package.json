@@ -4,10 +4,9 @@
   "description": "Site e Blog de Raul Afonso",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
+    "start": "nodemon -e ts,json,mustache src/server.ts",
     "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
-    "dev": "nodemon -e ts,json,mustache src/server.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Leonardo (dev)",
   "license": "ISC",
