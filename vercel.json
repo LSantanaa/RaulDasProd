@@ -6,10 +6,9 @@
     "use": "@vercel/node"
     }
 ],
-  "routes":[
-    {
-    "src": "/(.*)",
-    "dest": "./src/server.ts"
-    }
-  ]
+"routes": [
+  { "src": "/(.*)", "dest": "./src/server.ts" },
+  { "src": "/public/(.*)", "dest": "/public/$1" },
+  { "src": "/favicon.ico", "dest": "/favicon.ico" }
+]
 }
