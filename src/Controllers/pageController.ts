@@ -32,9 +32,6 @@ export const about = (req: Request, res: Response) =>{
   const carouselBG = dataCarousel[9].url;
 
   const images = dataCarousel.slice(0,8);
-
-  res.cookie('_glc_au', req.cookies._glc_au, { sameSite: 'none', secure: true });
-  res.cookie('_gaexp', req.cookies._gaexp, { sameSite: 'none', secure: true });
   
   res.render('pages/sobre', {
       pageTitle,
