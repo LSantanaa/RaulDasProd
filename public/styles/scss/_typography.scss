@@ -1,10 +1,18 @@
 @font-face {
   font-family: 'MangoGrotesque';
   src: url('../fonts/Humane-Bold.woff2') format('woff2'), /* Modern Browsers */
-       url('../fonts/Humane-Bold.otf') format('opentype'); /* Safari, Android, iOS */
-           font-style: normal;
+  url('../fonts/Humane-Bold.otf') format('opentype'); /* Safari, Android, iOS */
+  font-style: normal;
   font-weight: bold;
   text-rendering: optimizeLegibility;
+}
+@font-face {font-family: "Network Free Version";
+  src: url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.eot"); /* IE9*/
+  src: url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.woff2") format("woff2"), /* chrome、firefox */
+  url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.woff") format("woff"), /* chrome、firefox */
+  url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.svg#Network Free Version") format("svg"); /* iOS 4.1- */
 }
 
 *{
@@ -32,6 +40,10 @@ button{
   font-weight: 600;
   text-transform: uppercase;
 }
+.highlight{
+  color: $bg__red;
+}
+/* PAGE HOME STYLES */
 
 .card__description{
   p{
@@ -48,7 +60,7 @@ button{
   color: $beige__light;
 }
 
-
+//SECTION INSTA
 .container__insta {
   h1{
     position: relative;
@@ -130,6 +142,35 @@ button{
   transition: 800ms ease all;
 }
 
+/*PAGINA SOBRE*/
+
+.sobre__container{
+  color: $beige;
+  &__questions p, span{
+    text-transform: uppercase;
+    font-family: 'MangoGrotesque', sans-serif;
+    font-size: 3rem;
+  }
+  &__skills p{
+    font-family: 'Network Free Version';
+    font-size: 1rem;
+    color: $beige;
+    &.prod{
+      transform: rotate(-13.804deg);
+    }
+    &.editor{
+      transform: rotate(17.979deg); 
+    }
+  }
+
+}
+
+.enjoy p{
+  font-family: 'MangoGrotesque', sans-serif;
+  text-align: center;
+  font-size: 3.5rem;
+}
+//FOOTER
 
 .container__footer a{
   color: $beige;

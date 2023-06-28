@@ -3,16 +3,17 @@ import express from "express";
 import mustache from 'mustache-express';
 import path from "path";
 import mainRoutes from './routes/index';
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+
 import { umAno } from './Controllers/pageController';
 
 dotenv.config()
 
 const server = express()
 
-// server.use((req, res, next) => {
-//   res.setHeader('Permissions-Policy', 'ch-ua-form-factor=*');
-//   next();
-// });
+server.use(cookieParser())
+
 
 server.use(express.static(path.join(__dirname, '../public')));
 server.use('/favicon.ico', express.static(path.join(__dirname, '../favicon.ico')));
@@ -30,3 +31,4 @@ server.use((req, res)=>{
 server.listen(process.env.PORT, ()=>{
   console.log('Servidor rodando')
 })
+

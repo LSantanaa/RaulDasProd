@@ -1,15 +1,21 @@
 @media screen and (min-width:425px) {
+  /*PAGE HOME*/
   .container__bg__red .container__division{
     height: 211px; 
     background-image: url('../../images/bg__division__desktop.svg');
     bottom: 0px;
     left: 0px;
   }
+
+  /*PAGINA SOBRE*/
+  .sobre__container .sobre__container__division::before{
+    background-image: url('../../images/bg__division__desktop.svg');
+  }
+
 }
 @media screen and (min-width: 560px) {
-
+  /*PAGE HOME*/
   //HEADER MENU
-
   .container__header{
     height: 70px ;
   }
@@ -66,10 +72,15 @@
   }
   .container__description{
     flex-direction: row;
+    padding: 2rem 0;
+
+    h1{
+      height: 140px;
+    }
 
     p{
       font-size: 1.4rem;
-      padding: 0rem 0rem 2rem 4rem;
+      padding-left:4rem;
     }
   }
 
@@ -78,6 +89,7 @@
     flex-direction: row;
     height: 200px;
     width: 100%;
+    margin: 0;
     .card__video, iframe{
       height: 100%;
       width: auto;
@@ -100,10 +112,124 @@
     width: 100%;
     height: 195px;
   }
+
+  /*PÁGINA SOBRE*/
+  .sobre__container{
+    margin-bottom: 8rem;
+    .container__header{
+      background-color: $beige;
+    }
+    &__division{
+      height: 70%;
+      &::before{
+        background-image:url('../../images/bg__division__desktop.svg');
+      }
+    }
+    &__bg{
+      background-size: 55%;
+      background-position-x: 76%;
+    }
+    &__questions{
+      p, span{
+        font-size: 6rem;
+        padding: 0;
+      } 
+      .icons{
+        bottom: -90px;
+        .iconDesktop{
+          display: block;
+        }
+        .iconMobile{
+          display: none;
+        }
+      }
+    }
+    &__skills p{
+      font-size: 2rem;
+    }
+    &__formation p{
+      font-size: 1.375rem;
+    }
+
+  }
+
+
+  .container__carousel{
+    width: 100%;
+    height: 100%;
+    max-height: 555px;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .carouselBG{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: relative;
+    background-size: inherit;
+  }
+  
+  .swiper {
+    width: 84.6%;
+    height: 50.45%;
+    top: 14.414%;
+    border-radius: 1rem;
+  }
+  .swiper-wrapper img{
+    width: 100%;
+  }
+
+  .sobre__container{
+    &__content{
+      flex-direction: row;
+    }
+    &__job{
+    flex-direction: row;
+      &__info{
+        padding-right: 7rem;
+      }
+      &__photo {
+        margin-top: 0;
+        img{
+         width: 250px;
+         height: 380px; 
+        }
+      }
+    }
+    &__textsQuestions p, span{
+      font-size: 6rem;
+    }
+    &__textsSkills p{
+      font-size: 2rem;
+    }
+    &__personText p{
+      font-size: 1.375rem;
+    }
+     
+    &__job__info p{
+      font-size: 1.375rem;
+    }
+
+  }
+  //FOOTER
+
+  .container__footer .footer__links{
+    flex-direction: row;
+    gap: 4rem;
+    padding: 3rem 1rem;
+  }
+
 }
 
-@media  screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
+    /*PAGE HOME*/
   .container__bg__red .container__division{
+    background-image: url('../../images/bg__division__lg__desktop.svg');
+  }
+  /*PAGE SOBRE*/
+
+  .sobre__container .sobre__container__division::before{
     background-image: url('../../images/bg__division__lg__desktop.svg');
   }
 }

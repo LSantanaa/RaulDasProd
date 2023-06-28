@@ -1,8 +1,9 @@
-<div class="container__card flex flex__collumn" data-id={{id}}>
+<div class="container__card flex flex__collumn load__hidden" data-id={{id}}>
   <div class="card__video">
     <iframe 
-    class="lazy" width="320" height="180"
-    data-src="{{embedUrl}}?rel=0&amp;showinfo=0" title="{{title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      class="lazy" width="320" height="180"
+      data-src="{{embedUrl}}?rel=0&amp;showinfo=0" title="{{title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+    </iframe>
   </div>
   <div class="card__description flex flex__collumn">
     <h3><a href="{{url}}">{{title}}</a></h3>

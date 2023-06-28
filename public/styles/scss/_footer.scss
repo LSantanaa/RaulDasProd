@@ -4,6 +4,7 @@
   position: relative;
   background-color: $black__light;
   color: $beige;
+  border-top: 1px solid $beige;
  
   .footer__links{
     padding: 1rem;
@@ -28,6 +29,9 @@
   .footer__redes{ 
     gap: .5rem;
     margin-bottom: .5rem;
+    .redes{
+      gap: .5rem;
+    }
     img{  
       width: 70px;
     }

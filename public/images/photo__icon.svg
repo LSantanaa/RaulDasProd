@@ -1,0 +1,8 @@
+<svg width="54" height="86" viewBox="0 0 54 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="photo__icon">
+<path id="bg" d="M1.48563 0.5L53.409 23.6381L53.409 85.1993L1.48549 60.1994L1.48563 0.5Z" fill="#FEE9C0"/>
+<path id="corpo" d="M9 33H44V54H9V33Z" fill="#FEE9C0" stroke="#161616" stroke-width="2"/>
+<path id="lente" d="M37 43.5C37 49.299 32.299 54 26.5 54C20.701 54 16 49.299 16 43.5C16 37.701 20.701 33 26.5 33C32.299 33 37 37.701 37 43.5Z" fill="#FEE9C0" stroke="#161616" stroke-width="2"/>
+<path id="flash" d="M35 32H18L21.5789 26H30.9737L35 32Z" fill="#FEE9C0" stroke="#161616" stroke-width="2"/>
+</g>
+</svg>

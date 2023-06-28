@@ -1,10 +1,10 @@
 {{>partials/head_body}}
 
 <!--BG HERO-->
-<div class="container__bg-hero flex flex__collumn">
+<div  class="container__bg-hero flex flex__collumn">
   {{>partials/header_menu}}
   <!-- SECTION LOGO PRINCIPAL -->
-  <section class="container__logo flex flex__between flex__collumn">
+  <section class="container__logo flex flex__between flex__collumn load__hidden">
     <div class="container__logo__pricipal">
       <img
         class="logo__principal"
@@ -16,6 +16,7 @@
     <div class="container__icon__scroll">
       <img
         src="/images/scrollIcon.svg"
+        onload="SVGInject(this)"
         alt="icone de setas indicando para rolar a página para baixo"
       />
     </div>
@@ -26,12 +27,11 @@
 <main class="container__main flex flex__center">
   <div class="container__bg__red">
     <div class="container__bg__black">
-      <div class="container__description flex flex__collumn">
+      <div class="container__description load__hidden flex flex__collumn flex__center">
         <h1>Projetos</h1>
         <p>
           Estes são os projetos mais recentes que tive a honra de participar
-          juntamente à equipe ilhaCrop Audiovisual, da qual faço parte. Se
-          inscreve no canal e não perca nenhuma novidade!
+          juntamente à equipe ilhaCrop Audiovisual, da qual faço parte.
         </p>
       </div>
       <!-- PROJECTS -->
@@ -41,14 +41,15 @@
         {{/data}}
       </div>
     </div>
-    <div class="container__division"></div>
+    <div class="container__division">
+    </div>
   </div>
 </main>
 
 <!-- SECTION INSTA BANNER-->
 <section class="container__insta flex flex__center">
   <div class="container__insta__width">
-    <div class="container__insta__info flex flex__collumn">
+    <div class="container__insta__info flex flex__collumn" data-aos="fade-up">
       <div class="flex flex__center">
         <h1>INSTAGRAM <span>@rauldasprod</span></h1>
       </div>
@@ -59,7 +60,7 @@
         </p>
       </div>
     </div>
-    <div class="container__insta__banner">
+    <div class="container__insta__banner" data-aos="fade-up" data-aos-delay="200">
       <div class="banner"></div>
       <button class="btn">
         <a href="https://www.instagram.com/rauldasprod/" target="_blank"
