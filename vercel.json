@@ -1,14 +1,12 @@
 {
   "version": 2,
-  "builds":[
-    {
-    "src": "./dist/server.js",
-    "use": "@vercel/node"
-    }
-],
-"routes": [
-  { "src": "/(.*)", "dest": "./dist/server.js" },
-  { "src": "/public/(.*)", "dest": "/public/$1" },
-  { "src": "/favicon.ico", "dest": "/favicon.ico" }
-]
+  "builds": [
+    { "src": "package.json", "use": "npm install" },
+    { "src": "dist/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "dist/server.js" },
+    { "src": "/public/(.*)", "dest": "/public/$1" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" }
+  ]
 }
