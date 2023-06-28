@@ -4,9 +4,10 @@
   "description": "Site e Blog de Raul Afonso",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e ts,json,mustache src/server.ts",
-    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js",
+    "build": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
+    "dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "author": "Leonardo (dev)",
   "license": "ISC",
