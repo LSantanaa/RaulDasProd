@@ -8,5 +8,11 @@
   ],
   "routes": [
     { "src": "/(.*)", "dest": "./src/server.ts" }
+  ],
+  "rewrites": [
+    {
+      "source": "/public/(.*)",
+      "destination": "/public/$1"
+    }
   ]
 }
