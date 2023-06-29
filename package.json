@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
-    "build": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
-    "dev": "nodemon -e ts,json,mustache src/server.ts"
+    "start": "node src/server.ts",
+     "dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "author": "Leonardo (dev)",
   "license": "ISC",
