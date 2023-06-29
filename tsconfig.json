@@ -1,9 +1,9 @@
 {
      "compilerOptions": {
-        "target": "ES2020", // Escolha a versão do ECMAScript que você deseja usar (exemplo: ES2018)
-        "module": "ES2020", // Escolha o sistema de módulos que você está usando (exemplo: CommonJS)
+        "target": "ES2018", // Escolha a versão do ECMAScript que você deseja usar (exemplo: ES2018)
+        "module": "CommonJS", // Escolha o sistema de módulos que você está usando (exemplo: CommonJS)
                        /* Specify how TypeScript looks up a file from a given module specifier. */
-        "lib": ["ES2020"], // Especifique as bibliotecas do ECMAScript que você deseja ter disponíveis (exemplo: ES2018)
+        "lib": ["es2018"], // Especifique as bibliotecas do ECMAScript que você deseja ter disponíveis (exemplo: ES2018)
         "strict": true, // Habilita verificações de tipo estritas
         "esModuleInterop": true, // Habilita interoperabilidade entre os sistemas de módulos do ES6
         "outDir": "dist", // Pasta de saída para os arquivos transpilados
