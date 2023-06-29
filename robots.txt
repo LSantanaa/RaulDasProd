@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /blog
+
+Sitemap: https://raul-das-prod.vercel.app/sitemap.xml
+
