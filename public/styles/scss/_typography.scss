@@ -153,7 +153,7 @@ button{
   }
   &__skills p{
     font-family: 'Network Free Version';
-    font-size: 1rem;
+    font-size: 1.525rem;
     color: $beige;
     opacity: 0;
     &.prod{
@@ -170,6 +170,7 @@ button{
   font-family: 'MangoGrotesque', sans-serif;
   text-align: center;
   font-size: 3.5rem;
+  letter-spacing: .4rem;
 }
 //FOOTER
 

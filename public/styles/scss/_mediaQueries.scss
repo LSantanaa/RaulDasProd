@@ -13,9 +13,13 @@
   }
 
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 560px), not (orientation:landscape) {
+
+  :root {
+    --swiper-navigation-size: 60px !important;
+  }
+
   /*PAGE HOME*/
-  //HEADER MENU
   .container__header{
     height: 70px ;
   }
@@ -126,8 +130,9 @@
       }
     }
     &__bg{
-      background-size: 55%;
+      background-image: url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,f_webp,w_643/v1687501636/Raul_Background.webp');
       background-position-x: 76%;
+      background-size: contain;
     }
     &__questions{
       p, span{
@@ -152,7 +157,6 @@
     }
 
   }
-
 
   .container__carousel{
     width: 100%;

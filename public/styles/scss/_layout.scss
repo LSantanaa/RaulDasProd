@@ -108,7 +108,6 @@
     background-image: url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,h_330,q_auto:best,w_310/v1687501636/Raul_Background.webp');
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: contain;
   }
 
   &__questions{
@@ -164,6 +163,19 @@
 .swiper-wrapper img{
   width: 100%;
 }
+.swiper-button-next{
+   background: url('../../images/swiper__next.svg')  center/contain no-repeat;
+  &::after{
+    content: '' !important;
+  }
+}
+
+.swiper-button-prev{
+  background: url('../../images/swiper__prev.svg')  center/contain no-repeat;
+ &::after{
+   content: '' !important;
+ }
+}
 
 .sobre__container{
   &__secondary{
@@ -178,21 +190,14 @@
     }
   }
   &__job{
-    gap: 2rem;
-    &__photo{
-      position: relative;
-      &::before{
-        content: '';
-        position: absolute;
+      gap: 2rem;
+      &__photo img{
         height: 100%;
-        right: 0;
-        width: 1.5rem;
-        background-color: $bg__red;
-        
+        padding-right: 20px;
+        border-right: 20px solid;
+        border-color: $bg__red;
       }
-    }
-  }
-
+    } 
 }
 
 .enjoy{

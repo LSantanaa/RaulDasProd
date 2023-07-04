@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*swiper edit*/
+:root {
+  --swiper-theme-color: #f23030 !important;
+  --swiper-navigation-color: #f23030 !important;
+}
+
 /*GERAL*/
 * {
   padding: 0;
@@ -227,7 +233,7 @@ button {
 }
 .sobre__container__skills p {
   font-family: "Network Free Version";
-  font-size: 1rem;
+  font-size: 1.525rem;
   color: #FEE9C0;
   opacity: 0;
 }
@@ -242,6 +248,7 @@ button {
   font-family: "MangoGrotesque", sans-serif;
   text-align: center;
   font-size: 3.5rem;
+  letter-spacing: 0.4rem;
 }
 
 .container__footer a {
@@ -465,7 +472,6 @@ button {
   background-image: url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,h_330,q_auto:best,w_310/v1687501636/Raul_Background.webp");
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-size: contain;
 }
 .sobre__container__questions {
   position: relative;
@@ -519,6 +525,20 @@ button {
   width: 100%;
 }
 
+.swiper-button-next {
+  background: url("../../images/swiper__next.svg") center/contain no-repeat;
+}
+.swiper-button-next::after {
+  content: "" !important;
+}
+
+.swiper-button-prev {
+  background: url("../../images/swiper__prev.svg") center/contain no-repeat;
+}
+.swiper-button-prev::after {
+  content: "" !important;
+}
+
 .sobre__container__secondary {
   background-color: #161616;
   color: #FEE9C0;
@@ -533,16 +553,11 @@ button {
 .sobre__container__job {
   gap: 2rem;
 }
-.sobre__container__job__photo {
-  position: relative;
-}
-.sobre__container__job__photo::before {
-  content: "";
-  position: absolute;
+.sobre__container__job__photo img {
   height: 100%;
-  right: 0;
-  width: 1.5rem;
-  background-color: #F23030;
+  padding-right: 20px;
+  border-right: 20px solid;
+  border-color: #F23030;
 }
 
 .enjoy {
@@ -638,6 +653,40 @@ button {
   animation: blink-caret 0.7s infinite;
 }
 
+.logoRaul {
+  animation: logoAnimation 10s ease infinite alternate;
+}
+
+@keyframes logoAnimation {
+  0% {
+    fill-opacity: 0;
+    stroke-dasharray: 1 1000;
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+    opacity: 1;
+  }
+  30% {
+    fill-opacity: 0;
+    stroke-dasharray: 150 0;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+    opacity: 1;
+  }
+  60%, 90% {
+    fill-opacity: 1;
+    stroke-dasharray: 150 0;
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+    opacity: 1;
+  }
+  100% {
+    fill-opacity: 1;
+    stroke-dasharray: 150 0;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+    opacity: 1;
+  }
+}
 /*MEDIA QUERIES*/
 @media screen and (min-width: 425px) {
   /*PAGE HOME*/
@@ -652,7 +701,10 @@ button {
     background-image: url("../../images/bg__division__desktop.svg");
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 560px), not (orientation: landscape) {
+  :root {
+    --swiper-navigation-size: 60px !important;
+  }
   /*PAGE HOME*/
   .container__header {
     height: 70px;
@@ -749,8 +801,9 @@ button {
     background-image: url("../../images/bg__division__desktop.svg");
   }
   .sobre__container__bg {
-    background-size: 55%;
+    background-image: url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,f_webp,w_643/v1687501636/Raul_Background.webp");
     background-position-x: 76%;
+    background-size: contain;
   }
   .sobre__container__questions p, .sobre__container__questions span {
     font-size: 6rem;
