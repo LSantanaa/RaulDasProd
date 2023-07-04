@@ -654,7 +654,7 @@ button {
 }
 
 .logoRaul {
-  animation: logoAnimation 10s ease infinite alternate;
+  animation: logoAnimation 10s ease forwards;
 }
 
 @keyframes logoAnimation {
@@ -669,7 +669,7 @@ button {
     fill-opacity: 0;
     stroke-dasharray: 150 0;
     stroke-dashoffset: 0;
-    stroke-width: 1;
+    stroke-width: 10;
     opacity: 1;
   }
   60%, 90% {
@@ -683,7 +683,7 @@ button {
     fill-opacity: 1;
     stroke-dasharray: 150 0;
     stroke-dashoffset: 0;
-    stroke-width: 1;
+    stroke-width: 10;
     opacity: 1;
   }
 }
