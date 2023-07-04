@@ -2,8 +2,6 @@ import { Request, Response } from "express";
 import data from "../Model/dataProjects";
 import dataCarousel from "../Model/dataCarousel";
 
-export const umAno:number = 365 * 24 * 60 * 60 * 100;
-
 let pageTitle:string = '';
 let footerFirstLink:string = '/';
 let footerFirstLinkName:string = 'Home';

@@ -73,7 +73,6 @@
       observer.observe(lazyVideo);
     });
   }
-
   lazyObserver();
 
   /*Scroll Reveal Animation*/
@@ -139,4 +138,39 @@
       prevEl: ".swiper-button-prev",
     },
     })
-})();
+
+    function typeWriter(elemento) {
+      const textoArray = elemento.textContent.split('');
+      elemento.textContent = '';
+      elemento.dataset.content ="|"
+      elemento.style.opacity = '1';
+      setTimeout(()=>{
+        textoArray.forEach((letra, i, array) => {
+          setTimeout(() =>{
+           elemento.textContent += letra
+          }, 80 * i);
+          setTimeout(()=>{
+            elemento.dataset.content =""
+          }, array.length * 100)
+        });
+    
+      },400)
+    }
+    
+    const prod = document.querySelector('.prod');
+    const color = document.querySelector('.color');
+    const editor =document.querySelector('.editor')
+
+    setTimeout(()=> typeWriter(prod), 1100);
+    setTimeout(()=> typeWriter(color), 2100);
+    setTimeout(()=> typeWriter(editor), 3100);
+
+    setInterval(()=>{
+      setTimeout(()=> typeWriter(prod), 1100);
+      setTimeout(()=> typeWriter(color), 2100);
+      setTimeout(()=> typeWriter(editor), 3100);
+    },5500)
+    
+
+    
+  })();

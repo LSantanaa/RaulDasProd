@@ -77,7 +77,6 @@ ul{
   margin: 0 auto;
 } 
 
-
 // BACKGROUND
 .container__bg-hero{
   width: 100%;
@@ -105,4 +104,9 @@ ul{
 /*FOOTER*/
 @import './scss/footer';
 
-@import './scss/mediaQueries'
+/*Animações*/
+
+@import './scss/animations';
+
+/*MEDIA QUERIES*/
+@import './scss/mediaQueries';

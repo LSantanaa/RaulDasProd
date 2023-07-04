@@ -155,6 +155,7 @@ button{
     font-family: 'Network Free Version';
     font-size: 1rem;
     color: $beige;
+    opacity: 0;
     &.prod{
       transform: rotate(-13.804deg);
     }

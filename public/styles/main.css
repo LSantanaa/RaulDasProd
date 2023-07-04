@@ -229,6 +229,7 @@ button {
   font-family: "Network Free Version";
   font-size: 1rem;
   color: #FEE9C0;
+  opacity: 0;
 }
 .sobre__container__skills p.prod {
   transform: rotate(-13.804deg);
@@ -477,11 +478,10 @@ button {
 .sobre__container__questions .icons .iconDesktop {
   display: none;
 }
-.sobre__container__skills {
-  padding-bottom: 4rem;
-}
-.sobre__container p {
-  padding-bottom: 0.8rem;
+.sobre__container__skills p {
+  margin-bottom: 1.5rem;
+  width: -moz-min-content;
+  width: min-content;
 }
 .sobre__container__formation {
   margin-top: 1rem;
@@ -530,21 +530,19 @@ button {
 .sobre__container__secondary__info .icon {
   margin: 2rem 0rem;
 }
-.sobre__container__job p:first-child {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #FEE9C0;
-}
-.sobre__container__job p:last-child {
-  padding-top: 1rem;
+.sobre__container__job {
+  gap: 2rem;
 }
 .sobre__container__job__photo {
-  margin-top: 2.5rem;
-  border-right: 1.5rem solid #F23030;
+  position: relative;
 }
-.sobre__container__job__photo img {
-  display: block;
-  width: 100%;
-  padding-right: 1.5rem;
+.sobre__container__job__photo::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  right: 0;
+  width: 1.5rem;
+  background-color: #F23030;
 }
 
 .enjoy {
@@ -624,6 +622,23 @@ button {
   text-transform: none;
 }
 
+/*Animações*/
+@keyframes blink-caret {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.prod::after, .color::after, .editor::after {
+  content: attr(data-content);
+  opacity: 1;
+  margin-left: 5px;
+  animation: blink-caret 0.7s infinite;
+}
+
+/*MEDIA QUERIES*/
 @media screen and (min-width: 425px) {
   /*PAGE HOME*/
   .container__bg__red .container__division {
@@ -758,8 +773,7 @@ button {
   }
   .container__carousel {
     width: 100%;
-    height: 100%;
-    max-height: 555px;
+    min-height: 555px;
     max-width: 750px;
     margin: 0 auto;
   }
@@ -780,21 +794,8 @@ button {
   .swiper-wrapper img {
     width: 100%;
   }
-  .sobre__container__content {
-    flex-direction: row;
-  }
   .sobre__container__job {
     flex-direction: row;
-  }
-  .sobre__container__job__info {
-    padding-right: 7rem;
-  }
-  .sobre__container__job__photo {
-    margin-top: 0;
-  }
-  .sobre__container__job__photo img {
-    width: 250px;
-    height: 380px;
   }
   .sobre__container__textsQuestions p, .sobre__container span {
     font-size: 6rem;
@@ -822,5 +823,10 @@ button {
   /*PAGE SOBRE*/
   .sobre__container .sobre__container__division::before {
     background-image: url("../../images/bg__division__lg__desktop.svg");
+  }
+}
+@media (min-height: 650px) {
+  .sobre__container__questions .icons {
+    bottom: -130px;
   }
 }/*# sourceMappingURL=main.css.map */
