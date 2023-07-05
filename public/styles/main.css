@@ -701,7 +701,7 @@ button {
     background-image: url("../../images/bg__division__desktop.svg");
   }
 }
-@media screen and (min-width: 560px), not (orientation: landscape) {
+@media screen and (min-width: 560px) {
   :root {
     --swiper-navigation-size: 60px !important;
   }
