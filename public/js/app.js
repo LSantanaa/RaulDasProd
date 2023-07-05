@@ -158,14 +158,16 @@
     }
 
     const skillsElements = document.querySelectorAll('.typewriter')
+    if(skillsElements.length !== 0){
+      setTimeout(()=> typeWriter(skillsElements[0]), 1100);
+      setTimeout(()=> typeWriter(skillsElements[1]), 2200);
+      setTimeout(()=> typeWriter(skillsElements[2]), 3300);
+      skillsElements.forEach((element, i) =>{
+        setInterval(()=>  setTimeout(()=> typeWriter(element), 1100 *i),5500)
+      })
+    }
 
-    setTimeout(()=> typeWriter(skillsElements[0]), 1100);
-    setTimeout(()=> typeWriter(skillsElements[1]), 2200);
-    setTimeout(()=> typeWriter(skillsElements[2]), 3300);
-
-    skillsElements.forEach((element, i) =>{
-      setInterval(()=>  setTimeout(()=> typeWriter(element), 1100 *i),5500)
-    })
+    
 
 
     
