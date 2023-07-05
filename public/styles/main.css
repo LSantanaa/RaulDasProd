@@ -547,6 +547,9 @@ button {
 .sobre__container__secondary__info {
   margin: 0 auto;
 }
+.sobre__container__secondary__info hr {
+  margin: 20px 0;
+}
 .sobre__container__secondary__info .icon {
   margin: 2rem 0rem;
 }

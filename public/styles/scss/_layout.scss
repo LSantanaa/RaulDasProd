@@ -184,9 +184,15 @@
     padding: 1rem 2rem;
     &__info{
       margin: 0 auto;
+
+      hr{
+        margin: 20px 0;
+      }
+
       .icon{
         margin: 2rem 0rem;
       }
+
     }
   }
   &__job{
