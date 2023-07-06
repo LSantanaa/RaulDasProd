@@ -105,8 +105,14 @@ ul {
   src: url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.eot"); /* IE9*/
   src: url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.eot?#iefix") format("embedded-opentype"), url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.woff2") format("woff2"), url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.woff") format("woff"), url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.ttf") format("truetype"), url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.svg#Network Free Version") format("svg"); /* iOS 4.1- */
 }
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: local("Helvetica Now Display Medium"), local("Helvetica-Now-Display-Medium"), url("../../fonts/HelveticaNowDisplay-Medium.woff2") format("woff2"), url("../../fonts/HelveticaNowDisplay-Medium.woff") format("woff"), url("../../fonts/HelveticaNowDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
 * {
-  font-family: "Inter", sans-serif;
+  font-family: "Helvetica Now Display", sans-serif;
   text-decoration: none;
 }
 
@@ -473,17 +479,6 @@ button {
   background-repeat: no-repeat;
   background-position: bottom right;
 }
-.sobre__container__questions {
-  position: relative;
-}
-.sobre__container__questions .icons {
-  position: absolute;
-  bottom: -105px;
-  z-index: 3;
-}
-.sobre__container__questions .icons .iconDesktop {
-  display: none;
-}
 .sobre__container__skills p {
   margin-bottom: 1.5rem;
   width: -moz-min-content;
@@ -492,9 +487,18 @@ button {
 .sobre__container__formation {
   margin-top: 1rem;
   padding: 2rem;
+  position: relative;
 }
 .sobre__container__formation p {
   color: #161616;
+}
+.sobre__container__icons {
+  position: absolute;
+  left: 2rem;
+  top: -70px;
+}
+.sobre__container__icons .iconDesktop {
+  display: none;
 }
 
 .container__carousel {
@@ -558,6 +562,8 @@ button {
 }
 .sobre__container__job__photo img {
   height: 100%;
+  display: block;
+  margin: 0 auto;
   padding-right: 20px;
   border-right: 20px solid;
   border-color: #F23030;
@@ -641,6 +647,14 @@ button {
 }
 
 /*Animações*/
+/*animação barra de digitação*/
+.prod::after, .color::after, .editor::after {
+  content: attr(data-content);
+  opacity: 1;
+  margin-left: 5px;
+  animation: blink-caret 0.7s infinite;
+}
+
 @keyframes blink-caret {
   from, to {
     opacity: 1;
@@ -649,13 +663,7 @@ button {
     opacity: 0;
   }
 }
-.prod::after, .color::after, .editor::after {
-  content: attr(data-content);
-  opacity: 1;
-  margin-left: 5px;
-  animation: blink-caret 0.7s infinite;
-}
-
+/*animação logo*/
 .logoRaul {
   animation: logoAnimation 10s ease forwards;
 }
@@ -690,6 +698,23 @@ button {
     opacity: 1;
   }
 }
+.seta1 {
+  animation: scrollDown 0.5s ease infinite alternate;
+}
+
+.seta2 {
+  animation: scrollDown 0.5s ease 0.1s infinite alternate;
+}
+
+/*animação das setas scroll*/
+@keyframes scrollDown {
+  from {
+    transform: translate3d(0px, 6px, 0);
+  }
+  to {
+    transform: translate3d(0px, 0, 0);
+  }
+}
 /*MEDIA QUERIES*/
 @media screen and (min-width: 425px) {
   /*PAGE HOME*/
@@ -714,6 +739,8 @@ button {
   }
   .header__nav {
     width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
   }
   .nav__logo {
     height: inherit;
@@ -812,20 +839,17 @@ button {
     font-size: 6rem;
     padding: 0;
   }
-  .sobre__container__questions .icons {
-    bottom: -90px;
-  }
-  .sobre__container__questions .icons .iconDesktop {
-    display: block;
-  }
-  .sobre__container__questions .icons .iconMobile {
-    display: none;
-  }
   .sobre__container__skills p {
     font-size: 2rem;
   }
   .sobre__container__formation p {
     font-size: 1.375rem;
+  }
+  .sobre__container__icons .iconDesktop {
+    display: block;
+  }
+  .sobre__container__icons .iconMobile {
+    display: none;
   }
   .container__carousel {
     width: 100%;
@@ -878,7 +902,7 @@ button {
   }
   /*PAGE SOBRE*/
   .sobre__container .sobre__container__division::before {
-    background-image: url("../../images/bg__division__lg__desktop.svg");
+    background-image: url("../../images/bg__division__xxg__desktop.svg");
   }
 }
 @media (min-height: 650px) {

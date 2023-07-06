@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import data from "../Model/dataProjects";
+import dataCardVideo from "../Model/dataCardProjects";
 import dataCarousel from "../Model/dataCarousel";
 
 let pageTitle:string = '';
@@ -14,7 +14,7 @@ export const home = (req: Request, res: Response) =>{
   // res.set('Cache-Control',`public, max-age=${umAno}`)
 
   res.render('pages/index', {
-    data,
+    dataCardVideo,
     pageTitle,
     footerFirstLink, 
     footerFirstLinkName

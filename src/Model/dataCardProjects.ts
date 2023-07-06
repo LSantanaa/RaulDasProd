@@ -9,7 +9,7 @@ type CardVideo ={
   description: string
 }
 
-const data: CardVideo[] = [
+const dataCardVideo: CardVideo[] = [
   {
     id: 1,
     url: 'https://www.youtube.com/watch?v=nUGEFPotzVA',
@@ -20,7 +20,7 @@ const data: CardVideo[] = [
   },
   {
     id: 2,
-    url: 'https://www.youtube.com/watch?v=nUGEFPotzVA',
+    url: 'https://youtu.be/nUGEFPotzVA',
     embedUrl: 'https://www.youtube.com/embed/nUGEFPotzVA',
     poster: '/images/coresVivas.png',
     title: 'Cores Vivas | Curta-metragem',
@@ -28,7 +28,7 @@ const data: CardVideo[] = [
   },
   {
     id: 3,
-    url: 'https://www.youtube.com/watch?v=FGBaCxTDZaE&t',
+    url: 'https://youtu.be/FGBaCxTDZaE',
     embedUrl: 'https://www.youtube.com/embed/FGBaCxTDZaE',
     poster: '/images/aviaoDePapel.png',
     title: 'Avião de Papel | Curta-metragem',
@@ -36,4 +36,4 @@ const data: CardVideo[] = [
   },
 ]
 
-export default data;
+export default dataCardVideo;

@@ -1,9 +1,4 @@
-
-@keyframes blink-caret {
-  from,to{opacity: 1;}
-  50% {opacity: 0;}
-}
-
+/*animação barra de digitação*/
 .prod::after, .color::after, .editor::after{
   content: attr(data-content);
   opacity: 1;
@@ -12,6 +7,13 @@
 }
 
 
+@keyframes blink-caret {
+  from,to{opacity: 1;}
+  50% {opacity: 0;}
+}
+
+
+/*animação logo*/
 .logoRaul{
   animation: logoAnimation 10s ease  forwards;
 }
@@ -44,5 +46,23 @@
     stroke-dashoffset: 0;
     stroke-width: 0;
     opacity: 1;
+  }
+}
+
+.seta1{
+  animation: scrollDown .5s ease infinite alternate;
+}
+.seta2{
+  animation: scrollDown .5s ease .1s infinite alternate;
+
+}
+/*animação das setas scroll*/
+
+@keyframes scrollDown {
+  from{
+  transform: translate3d(0px,6px,0);
+  }
+  to{
+    transform: translate3d(0px,0,0);
   }
 }

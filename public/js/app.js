@@ -139,8 +139,11 @@
     },
     })
 
+
+
     function typeWriter(elemento) {
-      const textoArray = elemento.textContent.split('');
+      const text = elemento.textContent;
+      const textoArray = text.split('');
       elemento.textContent = '';
       elemento.dataset.content ="|"
       elemento.style.opacity = '1';
@@ -148,10 +151,10 @@
         textoArray.forEach((letra, i, array) => {
           setTimeout(() =>{
            elemento.textContent += letra
-          }, 80 * i);
+          }, 90 * i);
           setTimeout(()=>{
             elemento.dataset.content =""
-          }, array.length * 100)
+          }, array.length * 110)
         });
     
       },400)
@@ -159,11 +162,11 @@
 
     const skillsElements = document.querySelectorAll('.typewriter')
     if(skillsElements.length !== 0){
-      setTimeout(()=> typeWriter(skillsElements[0]), 1100);
-      setTimeout(()=> typeWriter(skillsElements[1]), 2200);
-      setTimeout(()=> typeWriter(skillsElements[2]), 3300);
+      setTimeout(()=> typeWriter(skillsElements[0]), 1500);
+      setTimeout(()=> typeWriter(skillsElements[1]), 3000);
+      setTimeout(()=> typeWriter(skillsElements[2]), 4500);
       skillsElements.forEach((element, i) =>{
-        setInterval(()=>  setTimeout(()=> typeWriter(element), 1100 *i),5500)
+        setInterval(()=>  setTimeout(()=> typeWriter(element), 1500 *i),7000)
       })
     }
 

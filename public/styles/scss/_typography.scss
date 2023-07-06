@@ -6,6 +6,7 @@
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
+
 @font-face {font-family: "Network Free Version";
   src: url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.eot"); /* IE9*/
   src: url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
@@ -14,9 +15,18 @@
   url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.svg#Network Free Version") format("svg"); /* iOS 4.1- */
 }
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: local('Helvetica Now Display Medium'), local('Helvetica-Now-Display-Medium'),
+      url('../../fonts/HelveticaNowDisplay-Medium.woff2') format('woff2'),
+      url('../../fonts/HelveticaNowDisplay-Medium.woff') format('woff'),
+      url('../../fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
 
 *{
-  font-family: "Inter", sans-serif;
+  font-family: "Helvetica Now Display", sans-serif;
   text-decoration: none;
 }
 

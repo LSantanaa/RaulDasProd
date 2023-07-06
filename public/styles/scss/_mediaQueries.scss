@@ -25,6 +25,8 @@
   }
   .header__nav{
     width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
   }
   .nav__logo{
     height: inherit;
@@ -139,21 +141,20 @@
         font-size: 6rem;
         padding: 0;
       } 
-      .icons{
-        bottom: -90px;
-        .iconDesktop{
-          display: block;
-        }
-        .iconMobile{
-          display: none;
-        }
-      }
     }
     &__skills p{
       font-size: 2rem;
     }
     &__formation p{
       font-size: 1.375rem;
+    }
+    &__icons{
+      .iconDesktop{
+        display: block;
+      }
+      .iconMobile{
+        display: none;
+      }
     }
 
   }
@@ -221,9 +222,10 @@
   /*PAGE SOBRE*/
 
   .sobre__container .sobre__container__division::before{
-    background-image: url('../../images/bg__division__lg__desktop.svg');
+    background-image: url('../../images/bg__division__xxg__desktop.svg');
   }
 }
+
 
 @media (min-height: 650px){
   .sobre__container__questions .icons{

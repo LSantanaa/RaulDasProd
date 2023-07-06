@@ -109,31 +109,28 @@
     background-repeat: no-repeat;
     background-position: bottom right;
   }
-
-  &__questions{
-    position: relative;
-    .icons{
-      position: absolute;
-      bottom: -105px;
-      z-index: 3;
-      .iconDesktop{
-        display: none;
-      }
-    }
-  }
   &__skills{
     p{
       margin-bottom: 1.5rem;
       width: min-content;
     }
   }
-
   
   &__formation {
     margin-top: 1rem;
     padding: 2rem;
+    position: relative;
     p{
       color: $black__light;
+    }
+  }
+  &__icons{
+    position: absolute;
+    left: 2rem;
+    top: -70px;
+
+    .iconDesktop{
+      display: none;
     }
   }
 }
@@ -199,6 +196,8 @@
       gap: 2rem;
       &__photo img{
         height: 100%;
+        display: block;
+        margin: 0 auto;
         padding-right: 20px;
         border-right: 20px solid;
         border-color: $bg__red;

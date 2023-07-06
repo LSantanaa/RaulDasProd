@@ -1,5 +1,8 @@
 User-Agent: *
 Disallow: /blog
+Allow: /
+Allow: /sobre
+Allow: /projetos
 
 Sitemap: https://raul-das-prod.vercel.app/sitemap.xml
 
