@@ -104,12 +104,12 @@
       delay: 220,
     });
 
-    sr.reveal(".container__division, .sobre__container__division", {
+    sr.reveal(".container__division, .container__sobre__division", {
       duration: 1200,
       delay: 260,
     });
 
-    sr.reveal(".sobre__container__formation", {
+    sr.reveal(".container__sobre__formation", {
       duration: 1300,
       delay: 300,
     });
@@ -141,37 +141,20 @@
 
 
 
-    function typeWriter(elemento) {
-      const text = elemento.textContent;
-      const textoArray = text.split('');
-      elemento.textContent = '';
-      elemento.dataset.content ="|"
-      elemento.style.opacity = '1';
-      setTimeout(()=>{
-        textoArray.forEach((letra, i, array) => {
-          setTimeout(() =>{
-           elemento.textContent += letra
-          }, 90 * i);
-          setTimeout(()=>{
-            elemento.dataset.content =""
-          }, array.length * 110)
-        });
-    
-      },400)
-    }
-
-    const skillsElements = document.querySelectorAll('.typewriter')
-    if(skillsElements.length !== 0){
-      setTimeout(()=> typeWriter(skillsElements[0]), 1500);
-      setTimeout(()=> typeWriter(skillsElements[1]), 3000);
-      setTimeout(()=> typeWriter(skillsElements[2]), 4500);
-      skillsElements.forEach((element, i) =>{
-        setInterval(()=>  setTimeout(()=> typeWriter(element), 1500 *i),7000)
-      })
-    }
-
-    
-
-
+    let words = gsap.utils.toArray(".typewriter"),
+    tl = gsap.timeline({ delay: 0.5, repeat: -1, repeatDelay: 2, yoyo: true }),
+    timePerCharacter = 0.15;
+  
+    words.forEach(el => {
+      tl.from(el, { 
+        text: "",
+        duration: el.innerHTML.length * timePerCharacter, 
+        ease: "none", 
+        onUpdate:()=>{ el.dataset.content = "|"},
+        onComplete: () => {el.dataset.content = ""},
+        onReverseComplete:  () =>{el.dataset.content = ""}
+    });
+  });
+  
     
   })();

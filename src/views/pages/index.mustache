@@ -14,28 +14,30 @@
       />
     </div>
     <div class="container__icon__scroll">
+      <a href="#projects">
       <img
         src="/images/scrollIcon.svg"
         onload="SVGInject(this)"
         alt="icone de setas indicando para rolar a página para baixo"
       />
+    </a>
     </div>
   </section>
 </div>
 
 <!-- SECTION PROJECTS (MAIN) -->
-<main class="container__main flex flex__center">
+<main  class="container__main flex flex__center">
   <div class="container__bg__red">
     <div class="container__bg__black">
       <div class="container__description load__hidden flex flex__collumn flex__center">
-        <h1>Projetos</h1>
+        <h1 id="projects" class="titleMango">Projetos</h1>
         <p>
           Estes são os projetos mais recentes que tive a honra de participar
           juntamente à equipe ilhaCrop Audiovisual, da qual faço parte.
         </p>
       </div>
       <!-- PROJECTS -->
-      <div class="container__projects flex flex__collumn">
+      <div  class="container__projects flex flex__collumn">
         {{#dataCardVideo}}
         {{>partials/cardProjetosHome}}
         {{/dataCardVideo}}
@@ -51,7 +53,7 @@
   <div class="container__insta__width">
     <div class="container__insta__info flex flex__collumn" data-aos="fade-up">
       <div class="flex flex__center">
-        <h1>INSTAGRAM <span>@rauldasprod</span></h1>
+        <h1 class="titleMango">INSTAGRAM <span>@rauldasprod</span></h1>
       </div>
       <div>
         <p>

@@ -1,4 +1,38 @@
 {{>partials/head_body}}
+
 {{>partials/header_menu}}
+
+<main class="container__projetos max850 m__auto">
+
+  <h1>Conheça um pouco mais dos meus trabalhos</h1>
+  
+  <section class="container__projetos__gallery">
+
+    <div class="container__projetos__sections">
+      {{#dataAllProjects}}
+      {{#sections}}
+      <h2>{{tagTitle}}</h2>
+      <div class="container__projetos__cards">
+        {{#videos}}
+        <div class="container__video__card  {{tag}}" data-id={{id}} data-tag="{{tag}}" data-iframe-src="{{embedUrl}}">
+          <img class="container__video__cardCover wh100" src="{{poster}}" alt="{{altPoster}}">
+          <p class="container__video__cardTitle">{{title}}</p>
+          <span></span>
+        </div>
+        {{/videos}}
+      </div>
+      {{/sections}}
+      {{/dataAllProjects}}
+
+    </div>    
+  </section>
+  <section class="container__projetos__modal">
+    <div class="container__projetos__iframe">
+      <button aria-label="fechar modal" id="btnClose">X</button>
+      <iframe src="" width="340" height="180" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+</main>
+
 
 {{>partials/footer}}

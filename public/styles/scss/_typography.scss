@@ -5,6 +5,7 @@
   font-style: normal;
   font-weight: bold;
   text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
 @font-face {font-family: "Network Free Version";
@@ -14,6 +15,7 @@
   url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.woff") format("woff"), /* chrome、firefox */
   url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url("../../fonts/172a9ebc9154b984ad72c8abdbc56b86.svg#Network Free Version") format("svg"); /* iOS 4.1- */
+  font-display: swap;
 }
 @font-face {
   font-family: 'Helvetica Now Display';
@@ -23,6 +25,7 @@
       url('../../fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 *{
@@ -37,7 +40,7 @@ a{
   color: $black;
 }
 
-h1{
+h1.titleMango{
   font-family: 'MangoGrotesque', sans-serif;
   font-size: 10rem;
   text-align: center;
@@ -53,13 +56,13 @@ button{
 .highlight{
   color: $bg__red;
 }
-/* PAGE HOME STYLES */
+/* PAGE HOME */
 
 .card__description{
   p{
     margin-top: 5px;
   }
-  h3 a {
+  h2 a {
     font-size: 1rem;
     font-weight: bold;
   }
@@ -72,7 +75,7 @@ button{
 
 //SECTION INSTA
 .container__insta {
-  h1{
+  h1.titleMango{
     position: relative;
     color: $black__light;
     font-size: 8.125rem;
@@ -154,7 +157,7 @@ button{
 
 /*PAGINA SOBRE*/
 
-.sobre__container{
+.container__sobre{
   color: $beige;
   &__questions p, span{
     text-transform: uppercase;
@@ -165,7 +168,6 @@ button{
     font-family: 'Network Free Version';
     font-size: 1.525rem;
     color: $beige;
-    opacity: 0;
     &.prod{
       transform: rotate(-13.804deg);
     }
@@ -182,6 +184,26 @@ button{
   font-size: 3.5rem;
   letter-spacing: .4rem;
 }
+
+
+/*PÁGINA PROJETOS*/
+.container__projetos{
+  h1{
+    font-family: 'MangoGrotesque', sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__sections{
+    h2{
+      text-transform: capitalize;
+    }
+  }
+  .container__video__cardTitle{
+    font-size: 1.5rem;
+  }
+}
+
 //FOOTER
 
 .container__footer a{

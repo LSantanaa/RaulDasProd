@@ -1,3 +1,4 @@
+/*PAGINA HOME/INDEX*/
 //SECTION MAIN
 .container__logo{
   width: 100%;
@@ -52,9 +53,7 @@
   gap: 2rem;
 }
 
-
 //SECTION INSTA BANNER
-
 .container__insta{
   width: 100%;
   padding: 2rem 0;
@@ -81,7 +80,7 @@
 }
   
 /*PÁGINA SOBRE*/
-.sobre__container{
+.container__sobre{
   margin-bottom: 3rem;
   .container__header{
     background-color: $beige;
@@ -110,6 +109,7 @@
     background-position: bottom right;
   }
   &__skills{
+    width: 97px;
     p{
       margin-bottom: 1.5rem;
       width: min-content;
@@ -174,7 +174,7 @@
  }
 }
 
-.sobre__container{
+.container__sobre{
   &__secondary{
     background-color: $black__light;
     color: $beige;
@@ -210,3 +210,25 @@
   padding: 2rem;
 }
 
+/*Página Projetos*/
+
+.container__projetos{
+  h1{
+    padding: 2rem 0;
+  }
+  &__gallery{
+    padding: 0 2rem;
+  }
+  &__sections{
+    padding-bottom: 1rem;
+    h2{
+      margin: 2rem 0 1rem;
+      border-bottom: 3px solid $beige__light;
+    }
+  }
+  &__cards{
+    display: grid;
+    grid-template-columns:  1fr;
+    gap: 1rem;
+  }
+}

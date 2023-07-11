@@ -1,5 +1,5 @@
 /*animação barra de digitação*/
-.prod::after, .color::after, .editor::after{
+.typewriter::after{
   content: attr(data-content);
   opacity: 1;
   margin-left: 5px;
@@ -50,19 +50,31 @@
 }
 
 .seta1{
-  animation: scrollDown .5s ease infinite alternate;
+  animation: scrollDown .8s ease-in-out infinite alternate;
 }
 .seta2{
-  animation: scrollDown .5s ease .1s infinite alternate;
+  animation: scrollDown .8s ease-in-out .1s infinite alternate;
 
 }
 /*animação das setas scroll*/
 
 @keyframes scrollDown {
-  from{
-  transform: translate3d(0px,6px,0);
+  0%{
+  transform: translate3d(0px,0px,0);
   }
-  to{
-    transform: translate3d(0px,0,0);
+  100%{
+    transform: translate3d(0px,18px,0);
+  }
+}
+
+/*modal animation*/
+@keyframes modal-fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

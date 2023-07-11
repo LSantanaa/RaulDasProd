@@ -145,4 +145,5 @@ dist
 .vercel
 
 # teste
-./teste.html
+teste.html
+style.css

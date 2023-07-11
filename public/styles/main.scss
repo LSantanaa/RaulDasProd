@@ -77,6 +77,9 @@ ul{
 .max660{
   max-width: 660px;
 }
+.max850{
+  max-width: 850px;
+}
 
 .m__auto{
   margin: 0 auto;
@@ -98,13 +101,13 @@ ul{
 /*HEADER MENU*/
 @import './scss/header';
 
-
 /*LAYOUT*/
 @import './scss/layout';
 
 /*CARDS PROJETOS*/
+@import './scss/videoCardProjects';
 
-@import './scss/cardsProjetos';
+@import './scss/cardsHomeProjects';
 
 /*FOOTER*/
 @import './scss/footer';

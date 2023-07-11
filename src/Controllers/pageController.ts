@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import dataCardVideo from "../Model/dataCardProjects";
 import dataCarousel from "../Model/dataCarousel";
+import  dataAllProjects  from "../Model/dataAllProjects";
 
 let pageTitle:string = '';
 let footerFirstLink:string = '/';
@@ -17,7 +18,8 @@ export const home = (req: Request, res: Response) =>{
     dataCardVideo,
     pageTitle,
     footerFirstLink, 
-    footerFirstLinkName
+    footerFirstLinkName,
+    includeModal:false
   })
 }
 
@@ -36,14 +38,21 @@ export const about = (req: Request, res: Response) =>{
       carouselBG,
       images,
       footerFirstLink,
-      footerFirstLinkName
+      footerFirstLinkName,
+      includeModal:false
     })
 }
 
 export const projects = (req: Request, res: Response) =>{
   pageTitle = 'Portifólio';
 
-  res.render('pages/projetos', {pageTitle, footerFirstLink, footerFirstLinkName})
+  res.render('pages/projetos', {
+    dataAllProjects,
+    pageTitle, 
+    footerFirstLink, 
+    footerFirstLinkName,
+    includeModal:true
+  })
 }
 
 export const blog = (req: Request, res: Response) =>{
