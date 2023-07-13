@@ -18,8 +18,7 @@ export const home = (req: Request, res: Response) =>{
     dataCardVideo,
     pageTitle,
     footerFirstLink, 
-    footerFirstLinkName,
-    includeModal:false
+    footerFirstLinkName
   })
 }
 
@@ -38,8 +37,7 @@ export const about = (req: Request, res: Response) =>{
       carouselBG,
       images,
       footerFirstLink,
-      footerFirstLinkName,
-      includeModal:false
+      footerFirstLinkName
     })
 }
 
@@ -51,7 +49,8 @@ export const projects = (req: Request, res: Response) =>{
     pageTitle, 
     footerFirstLink, 
     footerFirstLinkName,
-    includeModal:true
+    includeModal:true,
+    includeGSAP: true
   })
 }
 

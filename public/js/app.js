@@ -29,6 +29,7 @@
     const nav = document.querySelector(".header__nav");
     const ativo = "ativo";
     const eventos = ["click", "touchstart"];
+    let timeout;
 
     eventos.forEach((e) => {
       btn.addEventListener(e, handleClick, { passive: false });
@@ -44,8 +45,18 @@
         event.currentTarget.setAttribute("aria-label", "Fechar Menu");
       }
 
+      if(!active){
+        clearTimeout(timeout)
+
+        timeout = setTimeout(() => {
+          nav.classList.remove(ativo);
+        }, 700);
+      }
+
       outsideClick(this, eventos, () => {
-        nav.classList.remove(ativo);
+        setTimeout(()=>{
+          nav.classList.remove(ativo);
+        }, 700)
       });
     }
   }
@@ -171,6 +182,7 @@
 
     //**GSAP */
     /**GSAP Animation Text (página sobre)*/
+    if (typeof gsap !== 'undefined'){
     gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
       let 
@@ -194,7 +206,7 @@
         });
       });
       
-
+      if (document.querySelectorAll(".container__video__card").length > 0) {
       let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter(".container__video__card", "skewY", "deg"),
       clamp = gsap.utils.clamp(-5, 5); // don't let the skew go beyond 20 degrees. 
@@ -248,5 +260,6 @@
         trigger: '.videoclipe'
       }
     })      
-  
+  }
+}
 })();

@@ -517,7 +517,7 @@ button {
 }
 .container__sobre__bg {
   padding: 2rem;
-  background-image: url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,h_330,q_auto:best,w_310/v1687501636/Raul_Background.webp");
+  background-image: url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_380/v1687501636/Raul_Background.webp");
   background-repeat: no-repeat;
   background-position: bottom right;
 }
@@ -637,6 +637,7 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  overflow: hidden;
 }
 
 /*Página Blog*/
