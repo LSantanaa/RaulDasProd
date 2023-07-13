@@ -212,14 +212,20 @@ button{
   letter-spacing: .2rem;
   text-align: center;
   text-transform: uppercase;
+  text-shadow: 1px 1px 1px $black__light;
 }
 .container__blog__em__construcao{
   color: $beige;
   font-size: 1.1rem;
+  text-shadow: 1px 1px 1px $black__light;
+
+  
 }
 .container__blog__info{
   font-size: 1rem;
   color: $beige;
+  text-shadow: 1px 1px 1px $black__light;
+
 }
 
 

@@ -289,16 +289,19 @@ button {
   letter-spacing: 0.2rem;
   text-align: center;
   text-transform: uppercase;
+  text-shadow: 1px 1px 1px #161616;
 }
 
 .container__blog__em__construcao {
   color: #FEE9C0;
   font-size: 1.1rem;
+  text-shadow: 1px 1px 1px #161616;
 }
 
 .container__blog__info {
   font-size: 1rem;
   color: #FEE9C0;
+  text-shadow: 1px 1px 1px #161616;
 }
 
 .container__footer a {
