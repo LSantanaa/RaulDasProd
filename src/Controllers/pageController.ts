@@ -37,7 +37,8 @@ export const about = (req: Request, res: Response) =>{
       carouselBG,
       images,
       footerFirstLink,
-      footerFirstLinkName
+      footerFirstLinkName,
+      includeGSAP:true
     })
 }
 
