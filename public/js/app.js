@@ -1,5 +1,6 @@
-/*Outside Click Function*/
 (function() {
+
+  /*Outside Click Function*/
   function outsideClick(element, events, callback) {
     const html = document.documentElement;
     const outside = "data-outside";
@@ -21,8 +22,8 @@
       }
     }
   }
-  /**BTN MOBILE FUNCTION */
 
+  /**BTN MOBILE FUNCTION */
   function toggleMenu() {
     const btn = document.querySelector(".btn__mobile");
     const nav = document.querySelector(".header__nav");
@@ -56,7 +57,6 @@
       const src = iframe.getAttribute("data-src");
       iframe.setAttribute("src", src);
     }
-
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -102,59 +102,151 @@
       distance: "70%",
       origin: "left",
       delay: 220,
+      viewFactor: 0.5
     });
 
     sr.reveal(".container__division, .container__sobre__division", {
-      duration: 1200,
+      duration: 1100,
       delay: 260,
     });
 
+    sr.reveal('.titleMango, .insta__info',{
+      scale: 0.3,
+      distance:0,
+      delay: 220
+    })
+    sr.reveal('.banner, .btn',{
+      scale: 0.5,
+      delay: 350,
+      distance: 0
+    })
+
+    sr.reveal('.container__sobre__questions',{
+      delay: 800,
+      origin:'left',
+    })
+    sr.reveal('.container__sobre__skills',{
+      delay: 800,
+      origin:'right',
+    })
+
     sr.reveal(".container__sobre__formation", {
-      duration: 1300,
-      delay: 300,
+      delay: 500,
     });
 
     sr.reveal(".container__carousel", {
-      duration: 1300,
       delay: 300,
+      viewFactor: 0.4
     });
+
+    sr.reveal('.container__sobre__job__info, .container__sobre__job__photo, .icon, .enjoy p',{
+      scale: 0.2,
+      distance: 0,
+      viewFactor: 0.7
+    })  
+
+    sr.reveal('.container__title',{
+      scale: 0.2,
+      distance: 0,
+    })
+ 
   }
   scrollRevealInit();
 
   /*Init Carousel*/
-
-  const swiper = new Swiper(".swiper", {
-    autoplay: {
-      delay: 5000,
-    },
-    loop: true,
-
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    const swiper = new Swiper(".swiper", {
+      autoplay: {
+          delay: 5000,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     })
 
 
+    //**GSAP */
+    /**GSAP Animation Text (página sobre)*/
+    gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-    let words = gsap.utils.toArray(".typewriter"),
-    tl = gsap.timeline({ delay: 0.5, repeat: -1, repeatDelay: 2, yoyo: true }),
-    timePerCharacter = 0.15;
+      let 
+      words = gsap.utils.toArray(".typewriter"),
+      tl = gsap.timeline({
+        delay: 0.5, 
+        repeat: -1, 
+        repeatDelay: 2, 
+        yoyo: true
+        }),
+      timePerCharacter = 0.15;
+
+      words.forEach(el => {
+        tl.from(el, { 
+          text: "",
+          duration: el.innerHTML.length * timePerCharacter, 
+          ease: "none", 
+          onUpdate:()=>{ el.dataset.content = "|"},
+          onComplete: () => {el.dataset.content = ""},
+          onReverseComplete:  () =>{el.dataset.content = ""}
+        });
+      });
+      
+
+      let proxy = { skew: 0 },
+      skewSetter = gsap.quickSetter(".container__video__card", "skewY", "deg"),
+      clamp = gsap.utils.clamp(-5, 5); // don't let the skew go beyond 20 degrees. 
   
-    words.forEach(el => {
-      tl.from(el, { 
-        text: "",
-        duration: el.innerHTML.length * timePerCharacter, 
-        ease: "none", 
-        onUpdate:()=>{ el.dataset.content = "|"},
-        onComplete: () => {el.dataset.content = ""},
-        onReverseComplete:  () =>{el.dataset.content = ""}
-    });
-  });
+      ScrollTrigger.create({
+        onUpdate: (self) => {
+          let skew = clamp(self.getVelocity() / -800);
+          if (Math.abs(skew) > Math.abs(proxy.skew)) {
+            proxy.skew = skew;
+            gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+          }
+        }
+      });
+      gsap.set(".container__video__card", {transformOrigin: "right center", force3D: true});
+
+      gsap.from('.container__video__card.curta:first-child',{
+          y:-150,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: '.curta:first-child'
+          }
+      })
+
+      gsap.from('.container__video__card.curta:not(:first-child)',{
+        x:-350,
+        delay: 1,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: '.curta'
+        }
+     })
+
+     gsap.from('.container__video__card.comercial',{
+      x:-250,
+      delay: .5,
+      opacity: 0,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: '.comercial'
+      }
+    })
+      
+    gsap.from('.container__video__card.videoclipe',{
+      x:250,
+      delay: .5,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.videoclipe:nth-child(5)'
+      }
+    })      
   
-    
-  })();
+})();

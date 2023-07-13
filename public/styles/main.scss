@@ -77,6 +77,9 @@ ul{
 .max660{
   max-width: 660px;
 }
+.max750{
+  max-width: 750px;
+}
 .max850{
   max-width: 850px;
 }
@@ -86,7 +89,7 @@ ul{
 } 
 
 // BACKGROUND
-.container__bg-hero{
+.container__bg__hero{
   width: 100%;
   height: 100%;
   background-image: url('../images/bg_teste.png');

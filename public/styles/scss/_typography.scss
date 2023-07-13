@@ -190,7 +190,7 @@ button{
 .container__projetos{
   h1{
     font-family: 'MangoGrotesque', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
   }
@@ -203,6 +203,20 @@ button{
     font-size: 1.5rem;
   }
 }
+/*Página Blog*/
+.container__blog__title{
+  color: $white;
+  font-family: 'MangoGrotesque', sans-serif;
+  font-size: 5rem;
+  letter-spacing: .2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.container__blog__info{
+  font-size: 1.5rem;
+  color: $white__light;
+}
+
 
 //FOOTER
 

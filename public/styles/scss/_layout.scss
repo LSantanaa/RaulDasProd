@@ -25,7 +25,6 @@
 .container__bg__red{
   background-color: $bg__red;
   overflow: hidden;
-  max-width: 750px;
   .container__division{
     width: 100%;
     height: 100px;
@@ -37,7 +36,6 @@
   }
 }
 .container__bg__black{
-  max-width: 750px;
   background-color: $black__light;
   margin-top:40px;
   margin-bottom: 50px;
@@ -59,9 +57,6 @@
   padding: 2rem 0;
   margin: 0 auto;
   background-color: $beige;
-  .container__insta__width{
-    max-width: 750px;
-  }
   .container__insta__info{
     border-bottom: 1px solid $black__light;
     padding: 2rem 1rem;
@@ -99,7 +94,6 @@
     background-image:url('../../images/bg__division__mobile.svg');
     background-repeat: no-repeat;
     background-position: bottom center;
-    z-index: 1;
     }
   }
   &__bg{
@@ -217,7 +211,7 @@
     padding: 2rem 0;
   }
   &__gallery{
-    padding: 0 2rem;
+    padding: 0 2rem 3rem;
   }
   &__sections{
     padding-bottom: 1rem;
@@ -231,4 +225,26 @@
     grid-template-columns:  1fr;
     gap: 1rem;
   }
+}
+
+/*Página Blog*/
+
+.container__blog__main{
+  height: 100%;
+  padding: 2rem;
+
+  background-image: url('https://res.cloudinary.com/dn7vmnw2j/image/upload/e_grayscale,q_auto:best/v1688628645/47bjdjiniy4vbdz6kmydq-scaled-e1671231885653-removebg_h57ohw.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container__blog{
+  background: rgba($color: $black__light, $alpha: .3);
+  backdrop-filter: blur(2.5px);
+  border-radius: 1rem;
+  height: 80%;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
 }

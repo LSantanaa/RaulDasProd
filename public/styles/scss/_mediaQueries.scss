@@ -210,6 +210,9 @@
   /*PÁGINA PROJETOS*/
 
   .container__projetos{
+    h1{
+      font-size: 5.5rem;
+    }
     &__cards{
       &:first-of-type{
         grid-template-columns: 1fr 1fr;
@@ -218,9 +221,6 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
     .container__video__card{
-      // &.comercial:nth-child(n+3){
-      //   height: 191px;
-      // }
       &.curta:first-child{
         grid-column: 1/3;
       }

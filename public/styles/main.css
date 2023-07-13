@@ -78,6 +78,10 @@ ul {
   max-width: 660px;
 }
 
+.max750 {
+  max-width: 750px;
+}
+
 .max850 {
   max-width: 850px;
 }
@@ -86,7 +90,7 @@ ul {
   margin: 0 auto;
 }
 
-.container__bg-hero {
+.container__bg__hero {
   width: 100%;
   height: 100%;
   background-image: url("../images/bg_teste.png");
@@ -266,7 +270,7 @@ button {
 /*PÁGINA PROJETOS*/
 .container__projetos h1 {
   font-family: "MangoGrotesque", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -275,6 +279,21 @@ button {
 }
 .container__projetos .container__video__cardTitle {
   font-size: 1.5rem;
+}
+
+/*Página Blog*/
+.container__blog__title {
+  color: #fff;
+  font-family: "MangoGrotesque", sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container__blog__info {
+  font-size: 1.5rem;
+  color: #cacaca;
 }
 
 .container__footer a {
@@ -416,7 +435,6 @@ button {
 .container__bg__red {
   background-color: #F23030;
   overflow: hidden;
-  max-width: 750px;
 }
 .container__bg__red .container__division {
   width: 100%;
@@ -429,7 +447,6 @@ button {
 }
 
 .container__bg__black {
-  max-width: 750px;
   background-color: #161616;
   margin-top: 40px;
   margin-bottom: 50px;
@@ -450,9 +467,6 @@ button {
   padding: 2rem 0;
   margin: 0 auto;
   background-color: #FEE9C0;
-}
-.container__insta .container__insta__width {
-  max-width: 750px;
 }
 .container__insta .container__insta__info {
   border-bottom: 1px solid #161616;
@@ -492,7 +506,6 @@ button {
   background-image: url("../../images/bg__division__mobile.svg");
   background-repeat: no-repeat;
   background-position: bottom center;
-  z-index: 1;
 }
 .container__sobre__bg {
   padding: 2rem;
@@ -603,7 +616,7 @@ button {
   padding: 2rem 0;
 }
 .container__projetos__gallery {
-  padding: 0 2rem;
+  padding: 0 2rem 3rem;
 }
 .container__projetos__sections {
   padding-bottom: 1rem;
@@ -616,6 +629,27 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+/*Página Blog*/
+.container__blog__main {
+  height: 100%;
+  padding: 2rem;
+  background-image: url("https://res.cloudinary.com/dn7vmnw2j/image/upload/e_grayscale,q_auto:best/v1688628645/47bjdjiniy4vbdz6kmydq-scaled-e1671231885653-removebg_h57ohw.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container__blog {
+  background: rgba(22, 22, 22, 0.3);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+  border-radius: 1rem;
+  height: 80%;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
 }
 
 /*CARDS PROJETOS*/
@@ -727,6 +761,7 @@ button {
 }
 .container__footer .footer__logo {
   display: inline-block;
+  width: 100%;
   margin: 10px;
   border-right: 1px solid #FEE9C0;
   padding-right: 1rem;
@@ -1033,6 +1068,9 @@ button {
     font-size: 1.375rem;
   }
   /*PÁGINA PROJETOS*/
+  .container__projetos h1 {
+    font-size: 5.5rem;
+  }
   .container__projetos__cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
