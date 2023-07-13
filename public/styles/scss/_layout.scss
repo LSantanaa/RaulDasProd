@@ -230,21 +230,26 @@
 /*Página Blog*/
 
 .container__blog__main{
-  height: 100%;
+  height: calc(100vh - 70px);
   padding: 2rem;
-
-  background-image: url('https://res.cloudinary.com/dn7vmnw2j/image/upload/e_grayscale,q_auto:best/v1688628645/47bjdjiniy4vbdz6kmydq-scaled-e1671231885653-removebg_h57ohw.webp');
+  background-color: $black__light;
+}
+.container__blog__bg{
+  width: 100%;
+  height: 60%;
+  border-radius: 1rem;
+  background-image: url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,e_grayscale,q_auto:best,w_1100/v1688628645/bg__blog.webp');
+  background-color: $beige;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center ;
   background-size: cover;
 }
-
-.container__blog{
-  background: rgba($color: $black__light, $alpha: .3);
-  backdrop-filter: blur(2.5px);
+.container__blog__content{
+  text-align: center;
   border-radius: 1rem;
-  height: 80%;
+  background: rgba($color: $black, $alpha: .4);
+  backdrop-filter: blur(1.5px);
+  height: 100%;
   gap: 2rem;
   padding: 2rem;
-  align-items: center;
 }

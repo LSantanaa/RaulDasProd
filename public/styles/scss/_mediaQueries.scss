@@ -236,7 +236,26 @@
       }
     }
   }
+  
+  /*PÁGINA BLOG*/
+  .container__blog__main{
+    height: 100%;
+  }
+  .container__blog__bg{
+    width: 50%;
+  height: 100%;
 
+  }
+
+  .container__blog__title{
+    font-size: 5rem;
+  }
+  .container__blog__em__construcao{
+    font-size: 1.5rem;
+  }
+  .container__blog__info{
+    font-size: 1.3rem;
+  }
  
   /*FOOTER*/
   .container__footer .footer__links{

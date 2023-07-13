@@ -115,7 +115,7 @@
       distance:0,
       delay: 220
     })
-    sr.reveal('.banner, .btn',{
+    sr.reveal('.container__insta__banner',{
       scale: 0.5,
       delay: 350,
       distance: 0
@@ -245,7 +245,7 @@
       opacity: 0,
       duration: 1,
       scrollTrigger: {
-        trigger: '.videoclipe:nth-child(5)'
+        trigger: '.videoclipe'
       }
     })      
   

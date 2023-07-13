@@ -204,17 +204,22 @@ button{
   }
 }
 /*Página Blog*/
+
 .container__blog__title{
-  color: $white;
+  color: $beige;
   font-family: 'MangoGrotesque', sans-serif;
-  font-size: 5rem;
+  font-size: 3rem;
   letter-spacing: .2rem;
   text-align: center;
   text-transform: uppercase;
 }
+.container__blog__em__construcao{
+  color: $beige;
+  font-size: 1.1rem;
+}
 .container__blog__info{
-  font-size: 1.5rem;
-  color: $white__light;
+  font-size: 1rem;
+  color: $beige;
 }
 
 
