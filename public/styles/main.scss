@@ -90,14 +90,21 @@ ul{
 
 // BACKGROUND
 .container__bg__hero{
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7708333333333334) 11%, rgba(0,0,0,0.44870448179271705) 34%, rgba(255,255,255,0) 70%), url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_1500/v1690052347/download_thkeao.webp');
-  background-position: center center ;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-  background-attachment: fixed;
+  &Image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7708333333333334) 11%, rgba(0,0,0,0.44870448179271705) 34%, rgba(255,255,255,0) 70%), url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_1500/v1690052347/download_thkeao.webp');
+    background-position: center center ;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 /*TIPOGRAFIA*/
 @import './scss/typography';
