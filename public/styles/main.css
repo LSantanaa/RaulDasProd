@@ -93,10 +93,10 @@ ul {
 .container__bg__hero {
   width: 100%;
   height: 100%;
-  background-image: url("../images/bg_teste.png");
+  background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7708333333) 11%, rgba(0, 0, 0, 0.4487044818) 34%, rgba(255, 255, 255, 0) 70%), url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_1500/v1690052347/download_thkeao.webp");
   background-position: center center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -1139,5 +1139,11 @@ button {
 @media (min-height: 650px) {
   .container__sobre__questions .icons {
     bottom: -130px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .container__bg__hero {
+    background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7708333333) 11%, rgba(0, 0, 0, 0.4487044818) 34%, rgba(255, 255, 255, 0) 70%), url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_545/v1690051366/homePage/ihc2qf5hgahxckxnhv0c.webp");
+    background-size: cover;
   }
 }/*# sourceMappingURL=main.css.map */
