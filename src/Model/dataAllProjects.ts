@@ -76,20 +76,20 @@ interface DataAllProjects{
       videos:[
         {
           id: 1,
+          url: 'https://youtu.be/EZtInWOHkkQ',
+          embedUrl: 'https://www.youtube.com/embed/EZtInWOHkkQ',
+          poster: '/images/sanjaKart.png',
+          altPoster: 'Capa do Vídeo - Homem em um Kart de corrida',
+          title: 'Sanja Kart',
+          tag: 'comercial'
+        },
+        {
+          id: 2,
           url: 'https://youtu.be/wfqgsClPQLI',
           embedUrl: 'https://www.youtube.com/embed/wfqgsClPQLI',
           poster: '/images/phd__barber.webp',
           altPoster:'Capa do vídeo - Logo da Barbearia',
           title: "PHD's BarberClub",
-          tag: 'comercial'
-        },
-        {
-          id: 2,
-          url: 'https://www.youtube.com/watch?v=nUGEFPotzVA',
-          embedUrl: 'https://www.youtube.com/embed/FGBaCxTDZaE',
-          poster: '/images/sanjaKart.png',
-          altPoster: 'Capa do Vídeo - Homem em um Kart de corrida',
-          title: 'Sanja Kart',
           tag: 'comercial'
         },
         {

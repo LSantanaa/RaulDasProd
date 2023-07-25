@@ -12,15 +12,15 @@
       {{#dataAllProjects}}
       {{#sections}}
       <h2>{{tagTitle}}</h2>
-      <div class="container__projetos__cards">
+      <ul class="container__projetos__cards">
         {{#videos}}
-        <div class="container__video__card  {{tag}}" data-id={{id}} data-tag="{{tag}}" data-iframe-src="{{embedUrl}}">
+        <li class="container__video__card  {{tag}}" data-id={{id}} data-tag="{{tag}}" data-iframe-src="{{embedUrl}}">
           <img class="container__video__cardCover wh100" src="{{poster}}" alt="{{altPoster}}">
           <p class="container__video__cardTitle">{{title}}</p>
           <span></span>
-        </div>
+        </li>
         {{/videos}}
-      </div>
+      </ul>
       {{/sections}}
       {{/dataAllProjects}}
 

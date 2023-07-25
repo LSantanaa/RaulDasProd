@@ -1097,12 +1097,15 @@ button {
   .container__projetos__cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .container__projetos__cards:first-of-type {
+  .container__projetos__cards:nth-of-type(-n+2) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 340px 1fr;
   }
   .container__projetos .container__video__card.curta:first-child {
-    grid-column: 1/3;
+    grid-column: span 2;
+  }
+  .container__projetos .container__video__card.comercial:first-child {
+    grid-column: span 2;
   }
   .container__projetos__iframe {
     width: 100%;
