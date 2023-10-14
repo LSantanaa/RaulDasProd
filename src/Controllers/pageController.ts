@@ -1,60 +1,85 @@
 import { Request, Response } from "express";
 import dataCardVideo from "../Model/dataCardProjects";
 import dataCarousel from "../Model/dataCarousel";
-import  dataAllProjects  from "../Model/dataAllProjects";
+import dataAllProjects from "../Model/dataAllProjects";
 
-let pageTitle:string = '';
-let footerFirstLink:string = '/';
-let footerFirstLinkName:string = 'Home';
+let pageTitle: string = '';
 
-export const home = (req: Request, res: Response) =>{
-  footerFirstLink = '/sobre';
-  footerFirstLinkName = 'Sobre'
+interface arrayFooterLinks {
+  name: string,
+  route: string
+}
+
+const linksFooter: arrayFooterLinks[] = [
+  {
+    name: "Home",
+    route: "/"
+  },
+  {
+    name: "Sobre",
+    route: "/sobre"
+  },
+  {
+    name: "Portifólio",
+    route: "/projetos"
+  },
+  {
+    name: "Blog",
+    route: "/blog"
+  },
+
+]
+
+export const home = (req: Request, res: Response) => {
   pageTitle = 'Home';
 
-  // res.set('Cache-Control',`public, max-age=${umAno}`)
+  let filterLinks = linksFooter.filter(link => link.name != pageTitle)
 
   res.render('pages/index', {
     dataCardVideo,
     pageTitle,
-    footerFirstLink, 
-    footerFirstLinkName
+    filterLinks
   })
 }
 
-export const about = (req: Request, res: Response) =>{
-  pageTitle = 'Sobre Mim';
+export const about = (req: Request, res: Response) => {
+  pageTitle = 'Sobre';
 
-  footerFirstLink = '/';
-  footerFirstLinkName = 'Home';
-  
   const carouselBG = dataCarousel[9].url;
+  const images = dataCarousel.slice(0, 8);
 
-  const images = dataCarousel.slice(0,8);
-  
+  let filterLinks = linksFooter.filter(link => link.name != pageTitle)
+
   res.render('pages/sobre', {
-      pageTitle,
-      carouselBG,
-      images,
-      footerFirstLink,
-      footerFirstLinkName,
-      includeGSAP:true
-    })
+    pageTitle,
+    carouselBG,
+    images,
+    includeGSAP: true,
+    filterLinks
+  })
 }
 
-export const projects = (req: Request, res: Response) =>{
+export const projects = (req: Request, res: Response) => {
   pageTitle = 'Portifólio';
+  let filterLinks = linksFooter.filter(link => link.name != pageTitle)
+
 
   res.render('pages/projetos', {
     dataAllProjects,
-    pageTitle, 
-    footerFirstLink, 
-    footerFirstLinkName,
-    includeModal:true,
-    includeGSAP: true
+    pageTitle,
+    includeModal: true,
+    includeGSAP: true,
+    filterLinks
   })
 }
 
-export const blog = (req: Request, res: Response) =>{
-  res.render('pages/blog')
+export const blog = (req: Request, res: Response) => {
+  pageTitle = "Blog";
+
+  let filterLinks = linksFooter.filter(link => link.name != pageTitle)
+
+  res.render('pages/blog', {
+    pageTitle,
+    filterLinks
+  })
 }

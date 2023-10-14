@@ -2,11 +2,11 @@
       <footer class="container__footer flex flex__collumn flex__center">
         <div class="flex flex__collumn footer__links">
           <div class="flex flex__center">
-            <img class="footer__logo" src="/images/logo__bege.svg" alt="logo R na cor bege">
+            <img class="footer__logo" src="/images/logoDefaultWhite.svg" alt="logo raul branca">
             <ul class="footer__list">
-              <li><a class="footer__list__link" href="{{footerFirstLink}}">{{footerFirstLinkName}}</a></li>
-              <li><a class="footer__list__link" href="/projetos">Projetos</a></li>
-              <li><a class="footer__list__link" href="/blog">Blog</a></li>
+            {{#filterLinks}}
+              <li><a class="footer__list__link" href="{{route}}">{{name}}</a></li>
+            {{/filterLinks}}
             </ul>
           </div>
 

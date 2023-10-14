@@ -339,7 +339,7 @@ button {
 }
 
 .nav__logo svg {
-  height: 60px;
+  height: 50px;
 }
 
 .nav__list {
@@ -437,7 +437,7 @@ button {
   flex-grow: 1;
 }
 .container__logo .container__logo__pricipal .logo__principal {
-  width: 300px;
+  width: 210px;
 }
 .container__logo .container__icon__scroll {
   padding: 2rem 1rem;
@@ -856,7 +856,7 @@ button {
 }
 /*animação logo*/
 .logoRaul {
-  animation: logoAnimation 10s ease forwards;
+  animation: logoAnimation 8s ease forwards;
 }
 
 @keyframes logoAnimation {
@@ -869,21 +869,21 @@ button {
   }
   30% {
     fill-opacity: 0;
-    stroke-dasharray: 130 0;
+    stroke-dasharray: 300 0;
     stroke-dashoffset: 0;
-    stroke-width: 30;
+    stroke-width: 10;
     opacity: 1;
   }
   60%, 90% {
     fill-opacity: 1;
-    stroke-dasharray: 130 0;
+    stroke-dasharray: 300 0;
     stroke-dashoffset: 0;
     stroke-width: 0;
     opacity: 1;
   }
   100% {
     fill-opacity: 1;
-    stroke-dasharray: 130 0;
+    stroke-dasharray: 300 0;
     stroke-dashoffset: 0;
     stroke-width: 0;
     opacity: 1;
@@ -925,6 +925,9 @@ button {
     background-image: url("../../images/bg__division__desktop.svg");
     bottom: 0px;
     left: 0px;
+  }
+  .container__logo .container__logo__pricipal .logo__principal {
+    width: 300px;
   }
   /*PAGINA SOBRE*/
   .container__sobre .container__sobre__division::before {
@@ -977,9 +980,6 @@ button {
   }
   .btn__mobile {
     display: none;
-  }
-  .container__logo .container__logo__pricipal .logo__principal {
-    width: 380px;
   }
   .container__bg__black {
     margin-bottom: 130px;
@@ -1155,7 +1155,7 @@ button {
 }
 @media screen and (max-width: 560px) {
   .container__bg__heroImage {
-    background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7708333333) 11%, rgba(0, 0, 0, 0.4487044818) 34%, rgba(255, 255, 255, 0) 70%), url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_545/v1690051366/homePage/ihc2qf5hgahxckxnhv0c.webp");
+    background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7708333333) 15%, rgba(0, 0, 0, 0.4487044818) 40%, rgba(255, 255, 255, 0) 80%), url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_545/v1690051366/homePage/ihc2qf5hgahxckxnhv0c.webp");
     background-size: cover;
   }
 }/*# sourceMappingURL=main.css.map */
