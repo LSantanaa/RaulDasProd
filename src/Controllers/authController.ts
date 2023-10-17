@@ -28,7 +28,9 @@ export const getAccessToken = async (req: Request, res: Response) => {
       const accessToken = response.data.access_token;
       localStorage.setItem('token', JSON.stringify(accessToken))
       console.log(accessToken)
+      res.redirect('/')
     } catch (error) {
+      res.redirect('/')
       console.error(`Erro ao obter o token de acesso do Instagram: ${error}`);
     }
   }
