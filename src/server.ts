@@ -10,9 +10,6 @@ const server = express()
 
 server.use(express.static(path.join(__dirname, '../public')));
 
-server.use('/favicon.ico', express.static(path.join(__dirname, '../favicon.ico')));
-server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')));
-server.use('/sitemap.xml', express.static(path.join(__dirname, '../sitemap.xml')));
 
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));

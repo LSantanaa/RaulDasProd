@@ -83,3 +83,8 @@ export const blog = (req: Request, res: Response) => {
     filterLinks
   })
 }
+
+export const authSucess = (req: Request, res:Response)=>{
+  res.render('pages/home')
+  console.log(req.url)
+}

@@ -145,5 +145,6 @@ dist
 .vercel
 
 # teste
-teste.html
-style.css
+./teste.html
+./style.css
+instagram.json
