@@ -7,9 +7,14 @@ export const authInsta = (req: Request, res: Response) => {
 
 export const getAccessToken = async (req: Request, res: Response) => {
   
-  console.log("req.query:", req.params);
-  const code = req.params.code;
-  console.log("Código de autorização:", code);
+  console.log("URL completa:", req.originalUrl);
+
+  const regex = /\?code=(.*)(?=#_)/;
+  const match = req.originalUrl.match(regex);
+  if (match) {
+    const code = match[1];
+    console.log("Código de autorização:", code);
+  }
 
   try {
     res.send("Autorização bem-sucedida. Você pode fechar esta janela agora.");
