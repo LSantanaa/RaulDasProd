@@ -7,10 +7,10 @@ export const authInsta = (req: Request, res: Response) => {
 
 export const getAccessToken = async (req: Request, res: Response) => {
   
-  console.log("URL completa:", req.originalUrl);
+  console.log("URL completa:", req.url);
 
   const regex = /\?code=(.*)(?=#_)/;
-  const match = req.originalUrl.match(regex);
+  const match = req.url.match(regex);
   if (match) {
     const code = match[1];
     console.log("Código de autorização:", code);
