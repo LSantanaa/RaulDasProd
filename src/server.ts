@@ -10,6 +10,8 @@ const server = express()
 
 server.use(express.static(path.join(__dirname, '../public')));
 
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
