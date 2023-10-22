@@ -26,8 +26,20 @@ export const getAccessToken = async (req: Request, res: Response) => {
     );
 
     const accessToken = accessTokenResponse.data.access_token;
-    
-    res.send('Token de acesso obtido com sucesso: ' + accessToken);
+
+    const longAcessTokenResponse = await axios.get('https://graph.instagram.com/access_token', {
+      params: {
+        grant_type: 'ig_exchange_token',
+        client_secret: '7cfce4dbad452f6a1a9be6b46cd3ac8f',
+        access_token: accessToken
+      }
+    })
+
+    const longAccessToken = longAcessTokenResponse.data;
+
+    res.send('Token de acesso curto obtido com sucesso: ' + accessToken);
+    res.send('Token de acesso longo obtido com sucesso: ' + longAccessToken.access_token);
+    res.send('Token de acesso longo expira em: ' + (((longAccessToken.expires_in / 60) / 60) / 24 ).toFixed(0) + 'Dias');
   } catch (error) {
     console.error('Erro ao obter token de acesso:', error);
     res.status(500).send('Erro ao obter token de acesso.');
