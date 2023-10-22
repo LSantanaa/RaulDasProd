@@ -26,6 +26,8 @@ export const getAccessToken = async (req: Request, res: Response) => {
     );
 
     const accessToken = accessTokenResponse.data.access_token;
+    
+    let longAccessToken:any;
 
     const longAcessTokenResponse = await axios.get('https://graph.instagram.com/access_token', {
       params: {
@@ -34,8 +36,13 @@ export const getAccessToken = async (req: Request, res: Response) => {
         access_token: accessToken
       }
     })
+    .then(function(response){
+      longAccessToken = response;;
+    })
+    .catch(function(error){
+      console.log(error)
+    })
 
-    const longAccessToken = longAcessTokenResponse.data;
 
     res.send('Token de acesso curto obtido com sucesso: ' + accessToken);
     res.send('Token de acesso longo obtido com sucesso: ' + longAccessToken.access_token);
