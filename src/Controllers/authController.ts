@@ -25,7 +25,7 @@ export const getAccessToken = async (req: Request, res: Response) => {
       })
     );
 
-    const accessToken = accessTokenResponse.data.access_token;
+    let accessToken = accessTokenResponse.data.access_token;
     
     let longAccessToken:any;
 
@@ -37,17 +37,21 @@ export const getAccessToken = async (req: Request, res: Response) => {
       }
     })
     .then(function(response){
-      longAccessToken = response;
+      longAccessToken = response.data;
       console.log(longAccessToken)
     })
     .catch(function(error){
       console.log(error)
     })
 
-
+    Promise.all([accessToken(), longAccessToken()]).then(function(results){
+      const token = results[0];
+      longAccessToken = results[1].access_token;
+    })
+    
     res.send('Token de acesso curto obtido com sucesso: ' + accessToken);
-    // res.send('Token de acesso longo obtido com sucesso: ' + longAccessToken.access_token);
-    // res.send('Token de acesso longo expira em: ' + (((longAccessToken.expires_in / 60) / 60) / 24 ).toFixed(0) + 'Dias');
+    res.send('Token de acesso longo obtido com sucesso: ' + longAccessToken.access_token);
+    res.send('Token de acesso longo expira em: ' + (((longAccessToken.expires_in / 60) / 60) / 24 ).toFixed(0) + 'Dias');
   } catch (error) {
     console.error('Erro ao obter token de acesso:', error);
     res.status(500).send('Erro ao obter token de acesso.');
