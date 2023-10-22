@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, response } from "express";
 import axios from 'axios';
 import querystring from 'querystring';
 
@@ -13,8 +13,11 @@ export const getAccessToken = async (req: Request, res: Response) => {
     return res.status(400).send('Código de autorização ausente.');
   }
 
+  let accessToken: any;
+  let longAccessToken:any;
+
   try {
-    const accessTokenResponse = await axios.post(
+     await axios.post(
       'https://api.instagram.com/oauth/access_token',
       querystring.stringify({
         client_id: 625643059766168,
@@ -23,30 +26,18 @@ export const getAccessToken = async (req: Request, res: Response) => {
         redirect_uri: 'https://raul-das-prod.vercel.app/auth',
         code: code.toString()
       })
-    );
-
-    let accessToken = accessTokenResponse.data.access_token;
-    
-    let longAccessToken:any;
-
-    const longAcessTokenResponse = await axios.get('https://graph.instagram.com/access_token', {
-      params: {
-        grant_type: 'ig_exchange_token',
-        client_secret: '7cfce4dbad452f6a1a9be6b46cd3ac8f',
-        access_token: accessToken
-      }
-    })
-    .then(function(response){
-      longAccessToken = response.data;
-      console.log(longAccessToken)
-    })
-    .catch(function(error){
-      console.log(error)
-    })
-
-    Promise.all([accessToken(), longAccessToken()]).then(function(results){
-      const token = results[0];
-      longAccessToken = results[1].access_token;
+    ).then((response)=>{
+      console.log(response.data)
+      accessToken = response.data.access_token;
+      return axios.get('https://graph.instagram.api/access_token',{
+        params:{
+          grant_type:'ig_exchange_token',
+          client_secret: '7cfce4dbad452f6a1a9be6b46cd3ac8f',
+          access_token: accessToken
+        }
+      }).then((response)=>{
+        longAccessToken = response.data.access_token;
+      })
     })
     
     res.send('Token de acesso curto obtido com sucesso: ' + accessToken);
