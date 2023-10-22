@@ -37,7 +37,8 @@ export const getAccessToken = async (req: Request, res: Response) => {
       }
     })
     .then(function(response){
-      longAccessToken = response;;
+      longAccessToken = response;
+      console.log(longAccessToken)
     })
     .catch(function(error){
       console.log(error)
@@ -45,8 +46,8 @@ export const getAccessToken = async (req: Request, res: Response) => {
 
 
     res.send('Token de acesso curto obtido com sucesso: ' + accessToken);
-    res.send('Token de acesso longo obtido com sucesso: ' + longAccessToken.access_token);
-    res.send('Token de acesso longo expira em: ' + (((longAccessToken.expires_in / 60) / 60) / 24 ).toFixed(0) + 'Dias');
+    // res.send('Token de acesso longo obtido com sucesso: ' + longAccessToken.access_token);
+    // res.send('Token de acesso longo expira em: ' + (((longAccessToken.expires_in / 60) / 60) / 24 ).toFixed(0) + 'Dias');
   } catch (error) {
     console.error('Erro ao obter token de acesso:', error);
     res.status(500).send('Erro ao obter token de acesso.');
