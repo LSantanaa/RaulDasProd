@@ -33,6 +33,8 @@ export const getAccessToken = async (req: Request, res: Response) => {
       })
     );
     let accessToken = accessTokenResponse.data.access_token;
+    let idUser = accessToken.data.user_id;
+
 
     //token longo
     const longAccessTokenResponse = await axios.get('https://graph.instagram.com/access_token', {
@@ -43,21 +45,21 @@ export const getAccessToken = async (req: Request, res: Response) => {
       }
     })
     let longAccessToken = longAccessTokenResponse.data;
-
     
-    const getUserInsta = await axios.get(`https://graph.instagram.com/me?access_token${longAccessToken.access_token}`)
-    const getUserMedia = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,is_shared_to_feed,media_type,thumbnail_url&access_token=${longAccessToken.access_token}`)
+    
+    const getUserInsta = await axios.get(`https://graph.instagram.com/${idUser}?access_token${longAccessToken.access_token}`)
+    // const getUserMedia = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,is_shared_to_feed,media_type,thumbnail_url&access_token=${longAccessToken.access_token}`)
     
     const username = getUserInsta.data.username;
-    const data = getUserMedia.data.data
+    // const data = getUserMedia.data.data
     
-    //inserir media no banco
-    const newUserMedia = new userMedia({
-      username,
-      data
-    })
+    // //inserir media no banco
+    // const newUserMedia = new userMedia({
+    //   username,
+    //   data
+    // })
 
-    const inserirMedia = await newUserMedia.save();
+    // const inserirMedia = await newUserMedia.save();
 
     //inserir token no banco de dados
     const today = new Date();
@@ -72,7 +74,7 @@ export const getAccessToken = async (req: Request, res: Response) => {
     })
     const inserirToken = await newToken.save();
 
-    if(inserirMedia && inserirToken){
+    if(inserirToken){
       res.redirect('/')
     }else{
       res.send('Houve um erro ao salvar os dados, contate o administrador.')
