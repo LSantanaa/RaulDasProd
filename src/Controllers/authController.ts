@@ -47,7 +47,7 @@ export const getAccessToken = async (req: Request, res: Response) => {
     let longAccessToken = longAccessTokenResponse.data;
     
     
-    const getUserInsta = await axios.get(`https://graph.instagram.com/me?fields=id,username&access_token${longAccessToken.access_token}`)
+    const getUserInsta = await axios.get(`https://graph.instagram.com/me?fields=id,username&access_token=${longAccessToken.access_token}`)
     const getUserMedia = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,is_shared_to_feed,media_type,thumbnail_url&access_token=${longAccessToken.access_token}`)
     
     const username = getUserInsta.data.username;
