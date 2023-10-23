@@ -28,4 +28,4 @@ const userSchema = new mongoose.Schema<userMedia>({
   ]
 });
 
-export const userMedia = mongoose.model<userMedia>('Token', userSchema);
+export const userMedia = mongoose.model<userMedia>('userMedia', userSchema);
