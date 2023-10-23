@@ -3,8 +3,11 @@ import express from "express";
 import mustache from 'mustache-express';
 import path from "path";
 import mainRoutes from './routes/index';
+import { mongoConnect } from './database/mongo';
 
 dotenv.config()
+
+mongoConnect();
 
 const server = express()
 
