@@ -1,9 +1,10 @@
 // AREA HEADER
-.container__header{
-  padding: 0 10px; 
-  background: rgba(255, 255, 255, 0.1);
+.container__header {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0);
   z-index: 2;
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -18,22 +19,28 @@
   }
 }
 
-.nav__logo svg{
-  height: 50px;
+.nav__logo {
+  padding: .5rem 1rem 0 1rem;
+  margin-right: 1rem;
+
+  svg {
+    height: 50px;
+  }
 }
 
-.nav__list{
+.nav__list {
   display: block;
   width: 100%;
   height: 0px;
   position: absolute;
   top: 78px;
   right: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0);
   z-index: 2;
   transition: .6s;
   visibility: hidden;
   overflow-y: hidden;
+
   &::before {
     content: "";
     position: absolute;
@@ -43,32 +50,46 @@
     left: 0;
     background: inherit;
     mix-blend-mode: normal;
-    backdrop-filter: blur(6.5px);
+    backdrop-filter: blur(9px) saturate(148%);
+    -webkit-backdrop-filter: blur(9px) saturate(148%);
     z-index: -1;
   }
 }
 
-.nav__list__item{
-  .list__item__link {
-    display: block;
-    color: $black__light;
-    padding: .4rem;
-    width: 100%;
-    text-align: center;
-    transition: .3s;
-      &:hover:not(.nav__logo a){
-       color: #474747;
-    }
+.nav__list .list__item__link:not(a.list__item__logo){
+  display: flex;
+  justify-content: center;
+  padding: .2rem 1rem;
+  color: var(--color-content);
+  position: relative;
+  color: $black;
+  &::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    border-radius: 5px;
+    background-color: #636363;
+    transition: all 0.5s ease;
+  }
+  &:hover, &.link__active{
+    color: #2f2e2e;
+    &::before{
+      width: 70%;
+      transform-origin: center;
+    }  
   }
 }
 
+
 // MENU MOBILE ATIVO
-.header__nav.ativo .nav__list{
-  height: 136px;
+.header__nav.ativo .nav__list {
+  height: 120px;
   visibility: visible;
 }
 
-.btn__mobile{
+.btn__mobile {
   display: flex;
   margin: 4px;
   padding: .5rem 1rem;
@@ -77,33 +98,37 @@
   border: none;
   gap: .5rem;
 
-  #hamburguer{
-        border-top: 3px solid;
-        color: $black;
-        width: 25px;
-        display: block;
-        transition: .5s ease;
-        &::after, &::before{
-          position: relative;
-          content: '';
-          display: block;
-          width: 100%;
-          height: 3px;
-          background: currentColor;
-          margin-top: 5px;
-          transition: .3s ease;
-        }
-      }
+  #hamburguer {
+    border-top: 3px solid;
+    color: $black;
+    width: 25px;
+    display: block;
+    transition: .5s ease;
+
+    &::after,
+    &::before {
+      position: relative;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: .3s ease;
+    }
+  }
 }
 
 // ANIMAÇÃO DO BOTÃO QUANDO ATIVO
 
-.header__nav.ativo #hamburguer{
+.header__nav.ativo #hamburguer {
   border-top-color: transparent;
-  &::before{
+
+  &::before {
     transform: rotate(135deg);
   }
-  &::after{
+
+  &::after {
     transform: rotate(-135deg);
     top: -7px;
   }

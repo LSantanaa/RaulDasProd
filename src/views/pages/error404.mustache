@@ -14,6 +14,7 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/error404.css" />
     
     <!--SCROLL REVEAL ANIMATION -->
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -22,9 +23,18 @@
 
   </head>
   <body>
-    <div id="progress-bar"></div>
-{{>partials/header_menu}}
+    {{>partials/header_menu}}
+    <section class="error__section">
+      <div class="error">
+        <span class="word">Error</span>
+        <span class="number">404</span>
+      </div>
+      <h1>:( Desculpe, a página não foi encontrada.</h1>
+      <p>Caso tenha certeza de que algo está incorreto <a href="https://instagram.com/rauldasprod">clique aqui para me informar.</a></p>
+      <p>Tente outro link ou retorne para a página inicial.</p>
 
-  <h1>Ops, Parece que está página não existe</h1>
+      <a class="voltar" href="https://raul-das-prod.vercel.app">Voltar</a>
+
+    </section>
 
 {{>partials/footer}}
