@@ -57,6 +57,9 @@
       margin-right: .5rem;
       margin-left: .5rem;
     }
+    .list__item__link:not(a.list__item__logo) {
+      padding: 0.2rem 1rem;
+    }
   }
   .btn__mobile{
     display: none;

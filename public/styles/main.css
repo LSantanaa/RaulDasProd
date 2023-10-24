@@ -373,10 +373,16 @@ button {
   z-index: -1;
 }
 
+.nav__list .nav__list__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .nav__list .list__item__link:not(a.list__item__logo) {
   display: flex;
   justify-content: center;
-  padding: 0.2rem 1rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
   color: var(--color-content);
   position: relative;
   color: #000;
@@ -989,6 +995,9 @@ button {
   .nav__list .nav__list__item {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+  }
+  .nav__list .list__item__link:not(a.list__item__logo) {
+    padding: 0.2rem 1rem;
   }
   .btn__mobile {
     display: none;
