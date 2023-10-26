@@ -4,7 +4,6 @@ import querystring from 'querystring';
 import dotenv from 'dotenv';
 import { getUserData, saveUserDataToDatabase, saveUserTokenToDatabase } from "../services/instaService";
 
-
 dotenv.config();
 
 const getShortAccesToken = async (code: string) => {
@@ -55,6 +54,8 @@ export const getAccessToken = async (req: Request, res: Response) => {
     await saveUserDataToDatabase(username, mediaData);
     await saveUserTokenToDatabase(longAccessToken, username);
     
+    res.redirect('/');
+
   } catch (error) {
     console.error('Erro ao obter token de acesso:', error);
     res.status(500).send('Erro ao obter token de acesso.');

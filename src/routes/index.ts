@@ -9,7 +9,7 @@ router.get('/home', PageController.home);
 router.get('/sobre', PageController.about);
 router.get('/projetos', PageController.projects);
 // router.get('/blog', PageController.blog);
-router.get('/valida_insta', authInsta);
-router.get('/auth', getAccessToken);
+// router.get('/valida_insta', authInsta);
+// router.get('/auth', getAccessToken);
 
 export default router;

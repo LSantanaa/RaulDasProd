@@ -42,7 +42,6 @@ export const home = async (req: Request, res: Response) => {
 
   let data = publicacoes.data.slice(0,4)
 
-  console.log(data)
   res.render('pages/index', {
     dataCardVideo,
     pageTitle,

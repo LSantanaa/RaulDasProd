@@ -1,36 +1,30 @@
 import cron from 'node-cron';
+import { userMedia } from '../Model/Schema/userMediaSchema';
 import { TokenModel } from '../Model/Schema/tokenSchema';
-import { refreshToken } from '../services/instaService';
+import { getUserData } from '../services/instaService';
 
-export default function updateEveryFiveDays() {
+export default function updateUserMedia() {
   const updateDataInDatabase = async () => {
     try {
-      const username = 'le0.Sant_'
-      const accessToken: any = await TokenModel.findOne({ user: username }).exec()
+      const user = 'rauldasprod'
+      const accessToken: any = await TokenModel.findOne({ user }).exec()
+      const userMediaData: any = await userMedia.findOne({ username: user }).populate('data').exec();
 
-      const today = new Date();
-      const expireDate = new Date(accessToken.expiresAt);
+      const { username, mediaData } = await getUserData(accessToken.longToken);
 
-      const diffMs = expireDate.getTime() - today.getTime();
+      userMediaData.username = username;
+      userMediaData.data = mediaData;
 
-      const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
-
-      if (diffDays <= 3) {
-        console.log('a data de expiração do token está próxima, atualizando token')
-        const updateTokenResponse = await refreshToken(accessToken.longToken);
-
-        accessToken.longToken = updateTokenResponse.data.access_token;
-        accessToken.expiresAt = new Date(today.getTime() + updateTokenResponse.data.expires_in * 1000);
-        await accessToken.save();
-      }
+      console.log('Atualizando postagens no banco de dados')
+      userMediaData.save();
 
     } catch (error) {
-      console.error('Erro ao atualizar o token:', error);
+      console.error('Erro ao atualizar as midias:', error);
     }
 
   }
 
-  cron.schedule('*/1 * * * *', () => {
+  cron.schedule('* * */5 * *', () => {
     updateDataInDatabase();
   });
 }
