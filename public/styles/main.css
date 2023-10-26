@@ -94,7 +94,7 @@ ul {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 70px);
 }
 .container__bg__heroImage {
   position: fixed;
@@ -527,7 +527,8 @@ button {
 
 /*PÁGINA SOBRE*/
 .container__sobre {
-  margin-bottom: 3rem;
+  height: 100vh;
+  margin-bottom: -6rem;
 }
 .container__sobre .container__header {
   background-color: #FEE9C0;
@@ -1042,6 +1043,7 @@ button {
   }
   /*PÁGINA SOBRE*/
   .container__sobre {
+    height: 100vh;
     margin-bottom: 8rem;
   }
   .container__sobre .container__header {

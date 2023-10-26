@@ -1,11 +1,13 @@
 {{>partials/head_body}}
-
 <!--BG HERO-->
-<div  class="container__bg__hero flex flex__collumn">
+{{>partials/header_menu}}
+
+<div class="container__bg__hero flex flex__collumn">
   <div class="container__bg__heroImage"></div>
-  {{>partials/header_menu}}
   <!-- SECTION LOGO PRINCIPAL -->
-  <section class="container__logo flex flex__between flex__collumn load__hidden">
+  <section
+    class="container__logo flex flex__between flex__collumn load__hidden"
+  >
     <div class="container__logo__pricipal">
       <img
         class="logo__principal"
@@ -16,21 +18,23 @@
     </div>
     <div class="container__icon__scroll">
       <a href="#projects">
-      <img
-        src="/images/scrollIcon.svg"
-        onload="SVGInject(this)"
-        alt="icone de setas indicando para rolar a página para baixo"
-      />
-    </a>
+        <img
+          src="/images/scrollIcon.svg"
+          onload="SVGInject(this)"
+          alt="icone de setas indicando para rolar a página para baixo"
+        />
+      </a>
     </div>
   </section>
 </div>
 
 <!-- SECTION PROJECTS (MAIN) -->
-<main  class="container__main flex flex__center">
+<main class="container__main flex flex__center">
   <div class="container__bg__red max750">
     <div class="container__bg__black max750">
-      <div class="container__description load__hidden flex flex__collumn flex__center">
+      <div
+        class="container__description load__hidden flex flex__collumn flex__center"
+      >
         <h1 id="projects" class="titleMango">Projetos</h1>
         <p>
           Estes são os projetos mais recentes que tive a honra de participar
@@ -38,14 +42,13 @@
         </p>
       </div>
       <!-- PROJECTS -->
-      <div  class="container__projects flex flex__collumn">
+      <div class="container__projects flex flex__collumn">
         {{#dataCardVideo}}
         {{>partials/cardProjetosHome}}
         {{/dataCardVideo}}
       </div>
     </div>
-    <div class="container__division">
-    </div>
+    <div class="container__division"></div>
   </div>
 </main>
 
@@ -63,7 +66,11 @@
         </p>
       </div>
     </div>
-    <div class="container__insta__banner" data-aos="fade-up" data-aos-delay="200">
+    <div
+      class="container__insta__banner"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
       <button class="btn">
         <a href="https://www.instagram.com/rauldasprod/" target="_blank"
           >Me Segue Lá!</a

@@ -1,44 +1,51 @@
-  <!-- FOOTER -->
-      <footer class="container__footer flex flex__collumn flex__center">
-        <div class="flex flex__collumn footer__links">
-          <div class="flex flex__center">
-            <img class="footer__logo" src="/images/logoDefaultWhite.svg" alt="logo raul branca">
-            <ul class="footer__list">
-            {{#filterLinks}}
-              <li><a class="footer__list__link" href="{{route}}">{{name}}</a></li>
-            {{/filterLinks}}
-            </ul>
-          </div>
+<!-- FOOTER -->
+<footer class="container__footer flex flex__collumn flex__center">
+  <div class="flex flex__collumn footer__links">
+    <div class="flex flex__center">
+      <img class="footer__logo" src="/images/logoDefaultWhite.svg" alt="logo raul branca">
+      <ul class="footer__list">
+        {{#filterLinks}}
+        <li><a class="footer__list__link" href="{{route}}">{{name}}</a></li>
+        {{/filterLinks}}
+      </ul>
+    </div>
 
-          <div class="footer__redes flex flex__center flex__collumn">
-            <div class="redes flex">
-              <a href="https://instagram.com/rauldasprod" target="_blank"><img src="/images/logo__insta.svg" alt="logo instagram"></a>
-              <a href="https://youtube.com/@ilhacrop" target="_blank"><img src="/images/logo__youtube.svg" alt="logo youtube"></a>
-              <a href="https://linkedin.com/in/raulafonsomoreira" target="_blank"><img src="/images/logo__linkedin.svg" alt="logo linkedin"></a>
-            </div>
-            <p>Contato: rauldasprod@outlook.com</p>
-          </div>
-        </div>
+    <div class="footer__redes flex flex__center flex__collumn">
+      <div class="redes flex">
+        <a href="https://instagram.com/rauldasprod" target="_blank"><img src="/images/logo__insta.svg"
+            alt="logo instagram"></a>
+        <a href="https://youtube.com/@ilhacrop" target="_blank"><img src="/images/logo__youtube.svg"
+            alt="logo youtube"></a>
+        <a href="https://linkedin.com/in/raulafonsomoreira" target="_blank"><img src="/images/logo__linkedin.svg"
+            alt="logo linkedin"></a>
+      </div>
+      <p>Contato: rauldasprod@outlook.com</p>
+    </div>
+  </div>
 
-        <div class="scroll__top">
-          <a href="#header" ><img src="/images/scrollIconTop.svg" onload="SVGInject(this)" alt="subir ao toppo da pagina"></a>
-        </div>
+  <div class="scroll__top">
+    <a href="#header"><img src="/images/scrollIconTop.svg" onload="SVGInject(this)" alt="subir ao toppo da pagina"></a>
+  </div>
 
-        <div class="footer__copy">
-          <p>Copyryght &copy; 2023 Raul Afonso | Todos os direitos reservados </p>
-          <p>Desenvolvido por <a href="https://linkedin.com/in/lsantanaa">LSDev</a></p>
-        </div>
+  <div class="footer__copy">
+    <p>Copyryght &copy; 2023 Raul Afonso | Todos os direitos reservados </p>
+    <p>Desenvolvido por <a href="https://linkedin.com/in/lsantanaa">LSDev</a></p>
+  </div>
 
-      </footer>
-      {{#includeModal}}
-      <script src="/js/modalController.js"></script>
-      {{/includeModal}}
+</footer>
 
-      {{#includeGSAP}}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-      {{/includeGSAP}}
-      <script src="/js/app.js"></script>
+{{#includeModal}}
+<script src="/js/modalController.js"></script>
+{{/includeModal}}
+
+{{#includeGSAP }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+{{/includeGSAP}}
+
+<script src="/js/app.js"></script>
+
 </body>
+
 </html>

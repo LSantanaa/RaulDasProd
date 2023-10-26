@@ -1,4 +1,4 @@
-(function () {
+function initializeScripts () {
   const linksMenu = document.querySelectorAll('.nav__list .list__item__link:not(a.list__item__logo)')
 
 function activeMenu(e){  
@@ -312,4 +312,6 @@ window.onload = function() {
       });
     }
   }
-})();
+};
+
+initializeScripts();

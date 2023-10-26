@@ -3,13 +3,16 @@ import express from "express";
 import mustache from 'mustache-express';
 import path from "path";
 import mainRoutes from './routes/index';
-import { mongoConnect } from './database/mongo';
+import { mongoConnect } from './database/db';
+import updateEveryFiveDays from './tasks/updateUserMedia';
 
 dotenv.config()
 
-// mongoConnect();
+mongoConnect();
 
 const server = express()
+
+updateEveryFiveDays();
 
 server.use(express.static(path.join(__dirname, '../public')));
 

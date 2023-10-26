@@ -1,79 +1,77 @@
 {{>partials/head_body}}
 
-<main class="container__sobre wh100">
-  {{>partials/header_menu}}
+  {{>partials/header_menu}}  
 
-  <section class="container__sobre__division load__hidden">
-    <div class="container__sobre__bg max660 wh100 flex flex__between m__auto ">
-      <div class="container__sobre__questions">
-        <p>Quem é <span class="highlight">Raul?</span></p>
-        <p>Onde <span class="highlight">Vive?</span></p>
-        <p>O que <span class="highlight">Grava?</span></p>
+  <main class="container__sobre wh100">
+    <section class="container__sobre__division load__hidden">
+      <div class="container__sobre__bg max660 wh100 flex flex__between m__auto ">
+        <div class="container__sobre__questions">
+          <p>Quem é <span class="highlight">Raul?</span></p>
+          <p>Onde <span class="highlight">Vive?</span></p>
+          <p>O que <span class="highlight">Grava?</span></p>
+        </div>
+        <div class="container__sobre__skills">
+          <p class="prod typewriter" id="prod" data-content="">Produtor</p>
+          <p class="color typewriter" id="color" data-content="">Colorista</p>
+          <p class="editor typewriter" id="edit" data-content="">Editor</p>
+        </div>
       </div>
-      <div class="container__sobre__skills">
-        <p class="prod typewriter" id="prod" data-content="">Produtor</p>
-        <p class="color typewriter" id="color" data-content="">Colorista</p>
-        <p class="editor typewriter" id="edit" data-content="">Editor</p>
+    </section>
+    <section class="container__sobre__formation load__hidden max660 m__auto">
+      <div class="container__sobre__icons">
+        <img class="iconMobile" src="/images/study__icon.svg" alt="icone de chapéu de formatura">
+        <img class="iconDesktop" src="/images/study__icon2.svg" alt="icone de chapéu de formatura">
+      </div>
+        <p>
+          Meu nome é Raul Afonso e sou videomaker desde 2020, ano que resolvi de vez entrar para o universo do Audiovisual, reproduzinho videoclipes, fashion films e fazendo alguns ensaios fotográficos.
+        </p>
+        <br>
+        <p>
+          Com o tempo meu foco foi mudando, pois pude experimentar dos demais diversos formatos durante minha formação acadêmica no curso superior em Produção Audiovisual.
+        </p>
+    </section>
+  </main>
+  
+  <section class="container__carousel flex flex__center">
+    <div style="background-image: url('{{carouselBG}}');" class="carouselBG">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {{#images}}
+          <div class="swiper-slide"><img src="{{url}}" alt="{{title}}"></div>
+          {{/images}}
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+  
       </div>
     </div>
   </section>
-  <section class="container__sobre__formation load__hidden max660 m__auto">
-    <div class="container__sobre__icons">
-      <img class="iconMobile" src="/images/study__icon.svg" alt="icone de chapéu de formatura">
-      <img class="iconDesktop" src="/images/study__icon2.svg" alt="icone de chapéu de formatura">
-    </div>
-      <p>
-        Meu nome é Raul Afonso e sou videomaker desde 2020, ano que resolvi de vez entrar para o universo do Audiovisual, reproduzinho videoclipes, fashion films e fazendo alguns ensaios fotográficos.
-      </p>
-      <br>
-      <p>
-        Com o tempo meu foco foi mudando, pois pude experimentar dos demais diversos formatos durante minha formação acadêmica no curso superior em Produção Audiovisual.
-      </p>
-  </section>
-</main>
-
-<section class="container__carousel flex flex__center">
-  <div style="background-image: url('{{carouselBG}}');" class="carouselBG">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        {{#images}}
-        <div class="swiper-slide"><img src="{{url}}" alt="{{title}}"></div>
-        {{/images}}
+  
+  <section class="container__sobre__secondary">
+    <div class="container__sobre__secondary__info max660">
+      <div class="icon">
+        <img src="/images/photo__icon.svg" alt="ícone de fotografia">
       </div>
-
-        
-      <div class="swiper-pagination"></div>
-
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
+      <div class="flex flex__collumn container__sobre__job">
+          <div class="container__sobre__job__info">
+            <p>
+              Em Agosto de 2022, juntamente aos meu amigos de faculdade, criamos a produtora IlhaCrop, inicialmente para o trabalho de graduação mas que resolvemos dar continuidade como uma empresa e entrar de cabeça no mercado Audiovisual.
+            </p>
+            <hr>
+            <p>
+             Atualmente você vai me encontrar produzindo conteúdo para redes sociais e fimes/curtas-metragens, que é onde meu pensamento está e posso dizer que é uma grande realização pessoal!
+            </p>
+          </div>
+          <div class="container__sobre__job__photo">
+            <img src="https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,h_380,q_auto:best,w_260/v1687810306/raul__e__camera_svtfdf.webp" alt="Produtor Raul Afonso e sua câmera">
+          </div>
+      </div>
     </div>
+  </section>
+  <div class="enjoy">
+    <p class="highlight">#ENJOYTHEPROCESS</p>
   </div>
-</section>
 
-<section class="container__sobre__secondary">
-  <div class="container__sobre__secondary__info max660">
-    <div class="icon">
-      <img src="/images/photo__icon.svg" alt="ícone de fotografia">
-    </div>
-    <div class="flex flex__collumn container__sobre__job">
-        <div class="container__sobre__job__info">
-          <p>
-            Em Agosto de 2022, juntamente aos meu amigos de faculdade, criamos a produtora IlhaCrop, inicialmente para o trabalho de graduação mas que resolvemos dar continuidade como uma empresa e entrar de cabeça no mercado Audiovisual.
-          </p>
-          <hr>
-          <p>
-           Atualmente você vai me encontrar produzindo conteúdo para redes sociais e fimes/curtas-metragens, que é onde meu pensamento está e posso dizer que é uma grande realização pessoal!
-          </p>
-        </div>
-        <div class="container__sobre__job__photo">
-          <img src="https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,h_380,q_auto:best,w_260/v1687810306/raul__e__camera_svtfdf.webp" alt="Produtor Raul Afonso e sua câmera">
-        </div>
-    </div>
-  </div>
-</section>
-<div class="enjoy">
-  <p class="highlight">#ENJOYTHEPROCESS</p>
-</div>
 {{>partials/footer}}

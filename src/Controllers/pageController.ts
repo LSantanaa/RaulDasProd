@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import dataCardVideo from "../Model/dataCardProjects";
 import dataCarousel from "../Model/dataCarousel";
 import dataAllProjects from "../Model/dataAllProjects";
+import { userMedia } from "../Model/Schema/userMediaSchema";
 
 let pageTitle: string = '';
 
@@ -30,11 +31,18 @@ const linksFooter: arrayFooterLinks[] = [
 
 ]
 
-export const home = (req: Request, res: Response) => {
+export const home = async (req: Request, res: Response) => {
   pageTitle = 'Home';
 
   let filterLinks = linksFooter.filter(link => link.name != pageTitle)
 
+  const publicacoes:any = await userMedia.findOne({ username: "rauldasprod" })
+  .populate('data')
+  .exec()
+
+  let data = publicacoes.data.slice(0,4)
+
+  console.log(data)
   res.render('pages/index', {
     dataCardVideo,
     pageTitle,
