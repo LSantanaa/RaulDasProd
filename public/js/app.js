@@ -1,31 +1,38 @@
-function initializeScripts () {
-  const linksMenu = document.querySelectorAll('.nav__list .list__item__link:not(a.list__item__logo)')
+function initializeScripts() {
+ 
+  const linksMenu = document.querySelectorAll(
+    ".nav__list .list__item__link:not(a.list__item__logo)"
+  );
 
-function activeMenu(e){  
-  linksMenu.forEach(link => {
-    link.classList.remove("link__active");
-  });
-  e.currentTarget.classList.add("link__active");
-  localStorage.setItem('activeLink', e.currentTarget.href);
-}
-
-linksMenu.forEach(link =>{
-  link.addEventListener('click', activeMenu)
-})
-
-window.onload = function() {
-  const activeLinkURL = localStorage.getItem('activeLink');
-  if (activeLinkURL !== null) {
-    const activeLink = Array.from(linksMenu).find(link => link.href === activeLinkURL);
-    if (activeLink !== undefined && activeLink.href === window.location.href) {
-      activeLink.classList.add("link__active");
-    }
-    if(window.location.href === linksMenu[0].href){
-      linksMenu[0].classList.add("link__active")
-    }
+  function activeMenu(e) {
+    linksMenu.forEach((link) => {
+      link.classList.remove("link__active");
+    });
+    e.currentTarget.classList.add("link__active");
+    localStorage.setItem("activeLink", e.currentTarget.href);
   }
-}
 
+  linksMenu.forEach((link) => {
+    link.addEventListener("click", activeMenu);
+  });
+
+  window.onload = function () {
+    const activeLinkURL = localStorage.getItem("activeLink");
+    if (activeLinkURL !== null) {
+      const activeLink = Array.from(linksMenu).find(
+        (link) => link.href === activeLinkURL
+      );
+      if (
+        activeLink !== undefined &&
+        activeLink.href === window.location.href
+      ) {
+        activeLink.classList.add("link__active");
+      }
+      if (window.location.href === linksMenu[0].href) {
+        linksMenu[0].classList.add("link__active");
+      }
+    }
+  };
 
   /*Outside Click Function*/
   function outsideClick(element, events, callback) {
@@ -267,51 +274,55 @@ window.onload = function() {
           }
         },
       });
-      gsap.set(".container__video__card", {
-        transformOrigin: "right center",
-        force3D: true,
-      });
 
-      gsap.from(".container__video__card.curta:first-child", {
-        y: -150,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".curta:first-child",
-        },
-      });
+      function gsapInit() {
+        gsap.set(".container__video__card", {
+          transformOrigin: "right center",
+          force3D: true,
+        });
 
-      gsap.from(".container__video__card.curta:not(:first-child)", {
-        x: -350,
-        delay: 1,
-        opacity: 0,
-        duration: 1.2,
-        scrollTrigger: {
-          trigger: ".curta",
-        },
-      });
+        gsap.from(".container__video__card.curta:first-child", {
+          y: -150,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".curta:first-child",
+          },
+        });
 
-      gsap.from(".container__video__card.comercial", {
-        x: -250,
-        delay: 0.5,
-        opacity: 0,
-        duration: 1.2,
-        scrollTrigger: {
-          trigger: ".comercial",
-        },
-      });
+        gsap.from(".container__video__card.curta:not(:first-child)", {
+          x: -350,
+          delay: 1,
+          opacity: 0,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: ".curta",
+          },
+        });
 
-      gsap.from(".container__video__card.videoclipe", {
-        x: 250,
-        delay: 0.5,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".videoclipe",
-        },
-      });
+        gsap.from(".container__video__card.comercial", {
+          x: -250,
+          delay: 0.5,
+          opacity: 0,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: ".comercial",
+          },
+        });
+
+        gsap.from(".container__video__card.videoclipe", {
+          x: 250,
+          delay: 0.5,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".videoclipe",
+          },
+        });
+      }
+      gsapInit();
     }
   }
-};
+}
 
 initializeScripts();

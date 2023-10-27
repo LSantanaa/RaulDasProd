@@ -6,6 +6,7 @@ import mainRoutes from './routes/index';
 import { mongoConnect } from './database/db';
 import updateToken from './tasks/updateUserToken';
 import updateUserMedia from './tasks/updateUserMedia';
+import delCacheFromServer from './tasks/updateCache';
 
 dotenv.config()
 
@@ -15,6 +16,7 @@ const server = express()
 
 updateToken();
 updateUserMedia();
+delCacheFromServer();
 
 server.use(express.static(path.join(__dirname, '../public')));
 

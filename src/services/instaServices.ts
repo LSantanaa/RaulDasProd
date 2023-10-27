@@ -3,10 +3,10 @@ import { userMedia } from '../Model/Schema/userMediaSchema';
 import { TokenModel } from '../Model/Schema/tokenSchema';
 
 
-//Faz uma requisição para obter usuário e mídia do usuário
+//Faz uma requisição para API do Instagram para obter usuário e mídia do usuário
 export const getUserData = async (accessToken: string)=>{
   const userResponse = await axios.get(`https://graph.instagram.com/me?fields=id,username&access_token=${accessToken}`);
-  const mediaResponse = await axios.get(`https://graph.instagram.com/me/media?fields=id,username,caption,media_url,permalink,media_type,thumbnail_url&access_token=${accessToken}}`);
+  const mediaResponse = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,media_type,thumbnail_url&access_token=${accessToken}}`);
 
   return{
     username: userResponse.data.username,
@@ -14,6 +14,7 @@ export const getUserData = async (accessToken: string)=>{
   };
 };
 
+//Faz uma requisição para a API do Instagram para atualizar Token
 export const refreshToken = async (accessToken: string)=>{
   const tokenResponse = await axios.get(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${accessToken}`)
   return tokenResponse;

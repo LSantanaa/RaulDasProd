@@ -9,7 +9,7 @@ export interface userMedia{
       media_url: string,
       media_type: string,
       thumbnail_url: string,
-      is_shared_to_feed: boolean
+      permalink: string,
     }
   ]
 }
@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema<userMedia>({
       media_url: String,
       media_type: String,
       thumbnail_url: String,
-      is_shared_to_feed: Boolean
+      permalink: String,
     }
   ]
 });

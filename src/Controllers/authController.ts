@@ -2,10 +2,11 @@ import { Request, Response } from "express";
 import axios from 'axios';
 import querystring from 'querystring';
 import dotenv from 'dotenv';
-import { getUserData, saveUserDataToDatabase, saveUserTokenToDatabase } from "../services/instaService";
+import { getUserData, saveUserDataToDatabase, saveUserTokenToDatabase } from "../services/instaServices";
 
 dotenv.config();
 
+//Requisição POST para API do Instagram para obter um token a partir de um código de autorização
 const getShortAccesToken = async (code: string) => {
   return await axios.post(
     'https://api.instagram.com/oauth/access_token',
@@ -19,6 +20,7 @@ const getShortAccesToken = async (code: string) => {
   );
 }
 
+//Requisição para API do IG para obter um token longo
 const getLongAccessToken = async (accessToken: string) => {
   return axios.get('https://graph.instagram.com/access_token', {
     params: {
@@ -51,7 +53,7 @@ export const getAccessToken = async (req: Request, res: Response) => {
 
     const {username, mediaData} = await getUserData(longAccessToken.access_token);
 
-    await saveUserDataToDatabase(username, mediaData);
+    await saveUserDataToDatabase(username, mediaData.slice(0,4));
     await saveUserTokenToDatabase(longAccessToken, username);
     
     res.redirect('/');

@@ -1,7 +1,7 @@
 import cron from 'node-cron';
 import { userMedia } from '../Model/Schema/userMediaSchema';
 import { TokenModel } from '../Model/Schema/tokenSchema';
-import { getUserData } from '../services/instaService';
+import { getUserData } from '../services/instaServices';
 
 export default function updateUserMedia() {
   const updateDataInDatabase = async () => {
@@ -13,10 +13,11 @@ export default function updateUserMedia() {
       const { username, mediaData } = await getUserData(accessToken.longToken);
 
       userMediaData.username = username;
-      userMediaData.data = mediaData;
+      userMediaData.data = mediaData.slice(0,4);
 
       console.log('Atualizando postagens no banco de dados')
-      userMediaData.save();
+      await userMediaData.save();
+      console.log('Postagens Atualizadas!')
 
     } catch (error) {
       console.error('Erro ao atualizar as midias:', error);
@@ -24,7 +25,7 @@ export default function updateUserMedia() {
 
   }
 
-  cron.schedule('* * */5 * *', () => {
+  cron.schedule('0 0 */2 * *', () => {
     updateDataInDatabase();
   });
 }
