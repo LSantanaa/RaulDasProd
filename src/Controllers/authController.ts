@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import axios from 'axios';
 import querystring from 'querystring';
 import dotenv from 'dotenv';
-import { getUserData, saveUserDataToDatabase, saveUserTokenToDatabase } from "../services/instaService";
+import { getUserData, saveUserDataToDatabase, saveUserTokenToDatabase } from "../services/instaServices";
 
 dotenv.config();
 
@@ -53,7 +53,7 @@ export const getAccessToken = async (req: Request, res: Response) => {
 
     const {username, mediaData} = await getUserData(longAccessToken.access_token);
 
-    await saveUserDataToDatabase(username, mediaData);
+    await saveUserDataToDatabase(username, mediaData.slice(0,4));
     await saveUserTokenToDatabase(longAccessToken, username);
     
     res.redirect('/');

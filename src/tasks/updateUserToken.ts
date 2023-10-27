@@ -1,6 +1,6 @@
 import cron from 'node-cron';
 import { TokenModel } from '../Model/Schema/tokenSchema';
-import { refreshToken } from '../services/instaService';
+import { refreshToken } from '../services/instaServices';
 
 export default function updateToken() {
   const updateTokenInDB = async () => {
@@ -37,7 +37,7 @@ export default function updateToken() {
 
   }
 
-  cron.schedule('* * */20 * *', () => {
+  cron.schedule('0 0 */20 * *', () => {
     updateTokenInDB();
   });
 }
