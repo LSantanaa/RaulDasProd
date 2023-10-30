@@ -37,7 +37,7 @@ export default function updateToken() {
 
   }
 
-  cron.schedule('0 0 */20 * *', () => {
+  cron.schedule('0 0 */5 * *', () => {
     updateTokenInDB();
   });
 }

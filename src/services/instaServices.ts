@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { userMedia } from '../Model/Schema/userMediaSchema';
+import { UserMedia } from '../Model/Schema/userMediaSchema';
 import { TokenModel } from '../Model/Schema/tokenSchema';
 
 
 //Faz uma requisição para API do Instagram para obter usuário e mídia do usuário
 export const getUserData = async (accessToken: string)=>{
   const userResponse = await axios.get(`https://graph.instagram.com/me?fields=id,username&access_token=${accessToken}`);
-  const mediaResponse = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,media_type,thumbnail_url&access_token=${accessToken}}`);
+  const mediaResponse = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,thumbnail_url,permalink,timestamp&access_token=${accessToken}}`);
 
   return{
     username: userResponse.data.username,
@@ -23,7 +23,7 @@ export const refreshToken = async (accessToken: string)=>{
 
 //salva a midia no banco
 export const saveUserDataToDatabase = async (username: string, mediaData: any) =>{
-  const newUserMedia = new userMedia({
+  const newUserMedia = new UserMedia({
     username,
     data: mediaData,
   });

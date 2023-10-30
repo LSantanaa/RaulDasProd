@@ -1,25 +1,39 @@
 # RaulDasProd
 ## Website/portifólio de Raul Afonso, produtor audiovisual
 
-Versão: 1.0<br>
+Versão: 3.0<br>
 Código: Leonardo de Sant Ana<br>
 Layout: Raul Afonso e Leonardo de Sant Ana
 
-Tecnologias e ferramentas:
+### Tecnologias e ferramentas:
 
-- Mustache(HTML TEMPLATE ENGINE)
-- Javascript
-- SCSS
-- Node.js
-- Express.js
+#### Linguagens e estilização
+  - Mustache(HTML TEMPLATE ENGINE)
+  - Javascript / Typescript
+  - CSS/SCSS
+  - NoSQL
+  
+#### Engine
+  - Node.js
+  
+#### Server
+  - Express.js
+
+#### Bibliotecas auxiliares
 - GSAP (Animação ao scroll, animaçao de escrita)
 - ScrollReveal.js (Animação ao scroll)
 - Swipper.js(carousel)
+- Node Cron
+- Node Cache
+- Moment
+- Axios
+- Dotenv
 
-Hospedagem e deploy
+### Hospedagem e deploy
 - Vercel
 - Cloudinary (Imagens)
+- MongoDB Atlas
 
-Análises e testes
+### Análises e testes
 - Google Search Console
 - LightHouse

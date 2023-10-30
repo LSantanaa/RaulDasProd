@@ -65,17 +65,73 @@
           conteúdos no meu perfil do Instagram. Se liga!
         </p>
       </div>
+    </div>
+    <div
+      class="container__insta__banner"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <div class="container__insta__widget">
+        <div class="container__insta__profile flex flex__between">
+          <div class="container__insta__profileDetails flex flex__center">
+            <img
+              src="/images/profile_raul.jpg"
+              alt="Foto de perfil do instagram Rauldasprod"
+            />
+            <div class="insta__details">
+              <p>Raul Das Prod</p>
+              <span>A film by Raul</span>
+            </div>
+          </div>
+          <a href="https://instagram.com/rauldasprod" class="btn">Seguir</a>
+        </div>
+
+        <div class="relative">
+          <div class="swiper2">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              {{#finalPubli}}
+              <div class="swiper-slide">
+                <div
+                  class="container__card__instaPubli wh100 relative"
+                  style="background-image: url('{{ thumbnail_url }}');"
+                >
+                  <div class="container__card__instaPubli__info wh100 flex flex__collumn">
+                    <div class="publi__details">
+                      <img
+                      src="/images/profile_raul.jpg"
+                      alt="Foto de perfil do instagram Rauldasprod"
+                      />
+                      <div class="profile">
+                        <p>rauldasprod</p>
+                        <span>{{ timestamp }}</span>
+                      </div>
+                      <img
+                        class="logo__insta2"
+                        src="/images/logo__insta2.svg"
+                        alt="Logo Do Instagram"
+                        width="10"
+                      />
+                    </div>
+                    <div class="hidden__caption">
+                      <p class="caption">{{{caption}}}</p>
+                      <a href="{{permalink}}" target="_blank" class="btn__ver__insta btn">Ver no Instagram</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{/finalPubli}}
+            </div>
+
+            <div class="swiper__button swiper__prev">
+              <img src="/images/swiper__icon__prev.svg" width="25" alt="botao previous">
+            </div>
+            <div class="swiper__button swiper__next">
+              <img src="/images/swiper__icon.svg" width="25" alt="botao previous">
+            </div>
+          </div>
+        </div>
       </div>
-      <div
-        class="container__insta__banner"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-      <button class="btn">
-        <a href="https://www.instagram.com/rauldasprod/" target="_blank"
-          >Me Segue Lá!</a
-        >
-      </button>
     </div>
   </div>
 </section>
