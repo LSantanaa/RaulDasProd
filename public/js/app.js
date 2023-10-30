@@ -223,6 +223,18 @@ function initializeScripts() {
     autoplay:{
       delay:4000
     },
+    breakpoints: {
+      // when window width is >= 320px
+      370: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 24
+      },
+    },
     navigation: {
       nextEl: ".swiper__next",
       prevEl: ".swiper__prev",

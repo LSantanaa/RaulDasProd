@@ -1,5 +1,15 @@
 .container__insta {
-  p {
+  a{
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-transform: none;
+  }
+  .insta__info{
+    padding: 2rem;
+    font-size: 1.4rem;
+  }
+  p{
     font-size: 1.5rem;
     padding: 0;
   }
@@ -8,7 +18,7 @@
     margin-bottom: 1rem;
 
     &Details {
-      width: 600px;
+      max-width: 600px;
       gap: .525rem;
       justify-content: start;
 
@@ -35,10 +45,14 @@
     position: relative;
   }
 
+  .container__insta__banner{
+    width: 370px;
+    margin: 0 auto;
+  }
+
   .swiper2 {
     overflow: hidden;
   }
-
   .swiper-slide {
     height: 300px;
   }
