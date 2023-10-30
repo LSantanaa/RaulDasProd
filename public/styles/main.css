@@ -801,6 +801,16 @@ button {
   padding: 1rem;
 }
 
+.container__insta a {
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+  text-transform: none;
+}
+.container__insta .insta__info {
+  padding: 2rem;
+  font-size: 1.4rem;
+}
 .container__insta p {
   font-size: 1.5rem;
   padding: 0;
@@ -809,7 +819,7 @@ button {
   margin-bottom: 1rem;
 }
 .container__insta__profileDetails {
-  width: 600px;
+  max-width: 600px;
   gap: 0.525rem;
   justify-content: start;
 }
@@ -828,6 +838,10 @@ button {
 }
 .container__insta .relative {
   position: relative;
+}
+.container__insta .container__insta__banner {
+  width: 370px;
+  margin: 0 auto;
 }
 .container__insta .swiper2 {
   overflow: hidden;
@@ -1147,7 +1161,8 @@ button {
     width: 100%;
     margin: 0;
   }
-  .container__card .card__video, .container__card iframe {
+  .container__card .card__video,
+  .container__card iframe {
     height: 100%;
     width: auto;
   }
@@ -1159,7 +1174,10 @@ button {
     padding-top: 0.3rem;
     font-size: 1.4rem;
   }
-  .container__insta__banner .banner {
+  .container__insta .container__insta__banner {
+    width: 100%;
+  }
+  .container__insta .container__insta__banner .banner {
     background-image: url("../../images/banner__insta.png");
     background-size: cover;
     width: 100%;
@@ -1184,7 +1202,8 @@ button {
     background-position-x: 76%;
     background-size: contain;
   }
-  .container__sobre__questions p, .container__sobre__questions span {
+  .container__sobre__questions p,
+  .container__sobre__questions span {
     font-size: 6rem;
     padding: 0;
   }
@@ -1225,7 +1244,8 @@ button {
   .container__sobre__job {
     flex-direction: row;
   }
-  .container__sobre__textsQuestions p, .container__sobre span {
+  .container__sobre__textsQuestions p,
+  .container__sobre span {
     font-size: 6rem;
   }
   .container__sobre__textsSkills p {

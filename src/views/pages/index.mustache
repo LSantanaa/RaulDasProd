@@ -92,33 +92,35 @@
               <!-- Slides -->
               {{#finalPubli}}
               <div class="swiper-slide">
-                <div
-                  class="container__card__instaPubli wh100 relative"
-                  style="background-image: url('{{ thumbnail_url }}');"
-                >
-                  <div class="container__card__instaPubli__info wh100 flex flex__collumn">
-                    <div class="publi__details">
-                      <img
-                      src="/images/profile_raul.jpg"
-                      alt="Foto de perfil do instagram Rauldasprod"
-                      />
-                      <div class="profile">
-                        <p>rauldasprod</p>
-                        <span>{{ timestamp }}</span>
+                <a href={{permalink}} target="_blank">
+                  <div
+                    class="container__card__instaPubli wh100 relative"
+                    style="background-image: url('{{ thumbnail_url }}');"
+                  >
+                    <div class="container__card__instaPubli__info wh100 flex flex__collumn">
+                      <div class="publi__details">
+                        <img
+                        src="/images/profile_raul.jpg"
+                        alt="Foto de perfil do instagram Rauldasprod"
+                        />
+                        <div class="profile">
+                          <p>rauldasprod</p>
+                          <span>{{ timestamp }}</span>
+                        </div>
+                        <img
+                          class="logo__insta2"
+                          src="/images/logo__insta2.svg"
+                          alt="Logo Do Instagram"
+                          width="10"
+                        />
                       </div>
-                      <img
-                        class="logo__insta2"
-                        src="/images/logo__insta2.svg"
-                        alt="Logo Do Instagram"
-                        width="10"
-                      />
-                    </div>
-                    <div class="hidden__caption">
-                      <p class="caption">{{{caption}}}</p>
-                      <a href="{{permalink}}" target="_blank" class="btn__ver__insta btn">Ver no Instagram</a>
+                      <div class="hidden__caption">
+                        <p class="caption">{{{caption}}}</p>
+                        <a href="{{permalink}}" target="_blank" class="btn__ver__insta btn">Ver no Instagram</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
               {{/finalPubli}}
             </div>
