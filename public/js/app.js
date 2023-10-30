@@ -220,9 +220,9 @@ function initializeScripts() {
   });
 
   const swiper2 = new Swiper(".swiper2", {
-    // autoplay:{
-    //   delay:4000
-    // },
+    autoplay:{
+      delay:4000
+    },
     breakpoints: {
       // when window width is >= 320px
       370: {
