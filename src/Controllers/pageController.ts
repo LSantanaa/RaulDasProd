@@ -2,35 +2,56 @@ import { Request, Response } from "express";
 import dataCardVideo from "../Model/dataCardProjects";
 import dataCarousel from "../Model/dataCarousel";
 import dataAllProjects from "../Model/dataAllProjects";
-import { userMedia } from "../Model/Schema/userMediaSchema";
+import { IDataUserMedia, UserMedia } from "../Model/Schema/userMediaSchema";
 import { getPubliFromCache, savePubliInCache } from "../services/cacheService";
+import moment from "moment";
+import 'moment/locale/pt-br';
+moment.locale('pt-br');
+
 
 let pageTitle: string = '';
 
+//publicação default
 const defaultPubli =  {
   id: 123456789,
   caption: '1 CENA = 4 LOOKS 🎨 \n'+'.\n'+'Esse é o poder que o color grading te dá. Conseguir mexer com todas as sensações que a cena transmite ✨\n'+'.\n'+'Aproveitei para aplicar efeitos sonoros que é uma área que estou dando uma maior atenção ultimamente 🎶'+'.\n'+'#colorgrading #davinciresolve #trip #cinematic',
-  media_url:"https://scontent.cdninstagram.com/v/t66.30100-16/10000000_3511953419133101_7103532755543319042_n.mp4?_nc_ht=scontent.cdninstagram.com&_nc_cat=105&_nc_ohc=NsSiDs_Zs7IAX-RwTMu&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfAfSo8YSUtUvzeBq8wAMriL71qD-iy22sXmGvL6jqnDkg&oe=653BA421&_nc_sid=10d13b",
+  media_url:"https://scontent.cdninstagram.com/v/t66.30100-16/10000000_3511953419133101_7103532755543319042_n.mp4?_nc_ht=scontent.cdninstagram.com&_nc_cat=105&_nc_ohc=NsSiDs_Zs7IAX9yC8_A&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfAyPY0B25IyQ971wh3EbeacvXUu1M4lp8KfXdBMsoYAgg&oe=653E4721&_nc_sid=10d13b",
   media_type:"VIDEO",
-  thumbnail_url:"https://scontent.cdninstagram.com/v/t51.2885-15/377872180_125757870594642_1030230128665171004_n.jpg?stp=dst-jpg_e15_fr_p1080x1080&_nc_ht=scontent.cdninstagram.com&_nc_cat=106&_nc_ohc=7G6E--AO-9YAX_0eZ9I&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfAkT1ZTjsrNH-37Ve17I9djlsdxevb7d7lpH0E_6cdt6A&oe=653B69FF&_nc_sid=10d13b",
-  permalink:"https://www.instagram.com/reel/CxGHMGCuSAK/"
+  thumbnail_url:"/images/capaPubliDefault.jpg",
+  permalink:"https://www.instagram.com/reel/CxGHMGCuSAK/",
+  timestamp: "2023-09-12"
+}
+
+const formatPubli = (publi:IDataUserMedia)=>{
+  const now = moment();
+  const date = publi.timestamp
+
+  const howLong = moment(date).from(now);
+
+  return {
+    id: publi.id,
+    caption: publi.caption.replace(/\n/g, ' '),
+    media_url: publi.media_url,
+    media_type: publi.media_type,
+    thumbnail_url: publi.thumbnail_url || publi.media_url,
+    permalink: publi.permalink,
+    timestamp: howLong
+  }
 }
 
 export const home = async (req: Request, res: Response) => {
+  pageTitle = 'Home';
   let dataPubli;
   
-  const cachedData = getPubliFromCache();
+  const cachedData = await getPubliFromCache();
   if (cachedData !== undefined) {
     dataPubli = JSON.parse(cachedData as string);
   }
-
-  pageTitle = 'Home';
-
   if(dataPubli === undefined){
     try{
-      const publicacoes: any = await userMedia.findOne({username: 'rauldasprod'}).populate('data').exec();
+      const publicacoes: any = await UserMedia.findOne({username: 'rauldasprod'}).populate('data').exec();
       dataPubli = publicacoes.data;
-      dataPubli.push(defaultPubli);
+      dataPubli.unshift(defaultPubli);
       savePubliInCache(dataPubli);
       console.log('Foi feita uma nova requisição para o banco.')
     }catch(error){
@@ -40,12 +61,15 @@ export const home = async (req: Request, res: Response) => {
    console.log('Armazenamento em cache detectado.')
   }
   
+  const finalPubli = await dataPubli.map(formatPubli)
+
   res.render('pages/index', {
     dataCardVideo,
     pageTitle,
-    dataPubli
+    finalPubli
   })
 }
+
 
 export const about = (req: Request, res: Response) => {
   pageTitle = 'Sobre';

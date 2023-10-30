@@ -801,6 +801,130 @@ button {
   padding: 1rem;
 }
 
+.container__insta p {
+  font-size: 1.5rem;
+  padding: 0;
+}
+.container__insta__profile {
+  margin-bottom: 1rem;
+}
+.container__insta__profileDetails {
+  width: 600px;
+  gap: 0.525rem;
+  justify-content: start;
+}
+.container__insta__profileDetails img {
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(238, 18, 18, 0.4);
+}
+.container__insta__profile .btn {
+  width: 150px;
+  color: #FEE9C0;
+  padding: 0.6rem;
+}
+.container__insta__profile .btn:hover {
+  color: #F23030;
+}
+.container__insta .relative {
+  position: relative;
+}
+.container__insta .swiper2 {
+  overflow: hidden;
+}
+.container__insta .swiper-slide {
+  height: 300px;
+}
+.container__insta .swiper__button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  display: flex;
+  align-items: center;
+}
+.container__insta .swiper__next {
+  right: -65px;
+}
+.container__insta .swiper__prev {
+  left: -10px;
+}
+.container__insta .container__card__instaPubli {
+  color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+}
+.container__insta .container__card__instaPubli:hover .container__card__instaPubli__info {
+  bottom: 0;
+  height: 100%;
+  border-radius: 1rem;
+}
+.container__insta .container__card__instaPubli__info {
+  height: 70px;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.3645833333) 100%);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border-radius: 0 0 1rem 1rem;
+  padding: 0.5rem;
+  gap: 2rem;
+  position: absolute;
+  bottom: 0;
+  transition: 0.4s ease;
+}
+.container__insta .container__card__instaPubli__info .publi__details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container__insta .container__card__instaPubli__info .publi__details img:not(.logo__insta2) {
+  width: 50px;
+  border-radius: 50%;
+}
+.container__insta .container__card__instaPubli__info .publi__details .logo__insta2 {
+  width: 25px;
+}
+.container__insta .container__card__instaPubli__info .publi__details .profile {
+  margin-top: 0.5rem;
+}
+.container__insta .container__card__instaPubli__info .publi__details .profile p {
+  font-size: 1rem;
+}
+.container__insta .container__card__instaPubli__info .publi__details .profile span {
+  font-size: 0.725rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.container__insta .container__card__instaPubli__info .hidden__caption {
+  padding: 1rem;
+  height: 100%;
+}
+.container__insta .container__card__instaPubli__info .hidden__caption .caption {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+}
+.container__insta .container__card__instaPubli__info .hidden__caption .btn__ver__insta {
+  display: block;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.container__insta .container__card__instaPubli__info .hidden__caption .btn__ver__insta:hover {
+  color: #fff;
+}
+
 /*FOOTER*/
 .container__footer {
   position: relative;

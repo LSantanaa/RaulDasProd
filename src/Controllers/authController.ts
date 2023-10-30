@@ -53,7 +53,7 @@ export const getAccessToken = async (req: Request, res: Response) => {
 
     const {username, mediaData} = await getUserData(longAccessToken.access_token);
 
-    await saveUserDataToDatabase(username, mediaData.slice(0,4));
+    await saveUserDataToDatabase(username, mediaData.slice(0,6));
     await saveUserTokenToDatabase(longAccessToken, username);
     
     res.redirect('/');

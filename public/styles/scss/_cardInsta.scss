@@ -1,0 +1,149 @@
+.container__insta {
+  p {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  &__profile {
+    margin-bottom: 1rem;
+
+    &Details {
+      width: 600px;
+      gap: .525rem;
+      justify-content: start;
+
+      img {
+        width: 80px;
+        border-radius: 50%;
+        border: 1px solid rgba(238, 18, 18, 0.4);
+      }
+    }
+
+    .btn {
+      width: 150px;
+      color: $beige;
+      padding: .6rem;
+
+      &:hover {
+        color: $bg__red;
+      }
+    }
+
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .swiper2 {
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    height: 300px;
+  }
+
+  .swiper__button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper__next {
+    right: -65px;
+  }
+
+  .swiper__prev {
+    left: -10px;
+  }
+
+  .container__card__instaPubli {
+    color: $white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    
+    &:hover .container__card__instaPubli__info{
+      bottom: 0; 
+      height: 100%;
+      border-radius: 1rem;
+    }
+
+    &__info {
+      height: 70px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.36458333333333337) 100%);
+      backdrop-filter: blur(3px);
+      border-radius: 0 0 1rem 1rem;
+      padding: .5rem;
+      gap: 2rem;
+      position: absolute;
+      bottom: 0;
+      transition: .4s ease;
+
+      .publi__details {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        img:not(.logo__insta2) {
+          width: 50px;
+          border-radius: 50%;
+        }
+
+        .logo__insta2 {
+          width: 25px;
+        }
+
+        .profile {
+          margin-top: .5rem;
+
+          p {
+            font-size: 1rem;
+          }
+
+          span {
+            font-size: .725rem;
+            color: rgba($white, $alpha: .6);
+          }
+        }
+
+      }
+
+      .hidden__caption {
+        padding: 1rem;
+        height: 100%;
+        .caption {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          text-overflow: ellipsis;
+          font-size: .8rem;
+        }
+
+        .btn__ver__insta{
+          display: block;
+          color: $white;
+          margin: 0 auto;
+          margin-top: 2rem;
+          padding: .6rem;
+          font-size: .8rem;
+          font-weight: 700;
+          border-radius: .5rem;
+          text-align: center;
+          // background:  radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          &:hover{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

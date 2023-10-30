@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 export const mongoConnect = ()=>{
-  mongoose.connect(`${process.env.MONGO_URL}/instagramApp?authSource=admin`)
+  mongoose.connect(`${process.env.MONGODB_URI}`)
   
   const db = mongoose.connection;
   

@@ -219,6 +219,21 @@ function initializeScripts() {
     keyboard: true,
   });
 
+  const swiper2 = new Swiper(".swiper2", {
+    autoplay:{
+      delay:4000
+    },
+    navigation: {
+      nextEl: ".swiper__next",
+      prevEl: ".swiper__prev",
+    },
+    slidesPerView: 3,
+    spaceBetween: 24,
+    loop: true,
+  });
+
+
+
   //**GSAP */
   /**GSAP Animation Text (página sobre)*/
   if (typeof gsap !== "undefined") {
