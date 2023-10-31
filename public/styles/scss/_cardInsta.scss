@@ -46,7 +46,7 @@
   }
 
   .container__insta__banner{
-    width: 370px;
+    width: 355px;
     margin: 0 auto;
   }
 
@@ -152,7 +152,6 @@
           font-weight: 700;
           border-radius: .5rem;
           text-align: center;
-          // background:  radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
           &:hover{
             color: $white;
           }

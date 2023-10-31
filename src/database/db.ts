@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-export const mongoConnect = ()=>{
-  mongoose.connect(`${process.env.MONGODB_URI}`)
+export const mongoConnect = async ()=>{
+ await mongoose.connect(`${process.env.MONGODB_URI}`)
   
-  const db = mongoose.connection;
+  const db =  mongoose.connection;
   
   db.on('error', console.error.bind(console, 'Erro de conexão'))
   db.once('open', function(){
