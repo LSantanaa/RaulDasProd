@@ -323,9 +323,15 @@
   }
 }
 
-@media screen and (max-width: 560px) {
-  .container__bg__heroImage {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7708333333333334) 15%, rgba(0, 0, 0, 0.44870448179271705) 40%, rgba(255, 255, 255, 0) 80%), url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_545/v1690051366/homePage/ihc2qf5hgahxckxnhv0c.webp');
-    background-size: cover;
+@media screen and (max-width: 660px) {
+  .container__bg__hero{
+    height: 100%;
+    &Image {
+      background: $black url('/images/bg__mobile.png');
+      background-size: contain;
+    background-repeat: no-repeat;
+      
+    }
+   
   }
 }

@@ -5,28 +5,32 @@
   --swiper-theme-color: #f23030 !important;
   --swiper-navigation-color: #f23030 !important;
 }
+
 /*GERAL*/
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: $beige $black;
 }
-html, body{
+
+html,
+body {
   scroll-behavior: smooth;
   width: 100%;
   height: 100vh;
   background-color: $beige;
 }
-html.sr .load__hidden{
+
+html.sr .load__hidden {
   visibility: hidden;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -40,72 +44,57 @@ html.sr .load__hidden{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: $beige__light; 
+  background-color: $beige__light;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
 // CLASSES COMUNS
-.flex{
+.flex {
   display: flex;
 }
 
-.flex__collumn{
+.flex__collumn {
   flex-direction: column;
 }
 
-.flex__row{
+.flex__row {
   flex-direction: row;
 }
 
-.flex__center{
+.flex__center {
   justify-content: center;
   align-items: center;
 }
-.flex__between{
+
+.flex__between {
   justify-content: space-between;
   align-items: center;
 }
 
-.wh100{
+.wh100 {
   width: 100%;
   height: 100%;
 }
 
-.max660{
+.max660 {
   max-width: 660px;
 }
-.max750{
+
+.max750 {
   max-width: 750px;
 }
-.max850{
+
+.max850 {
   max-width: 850px;
 }
 
-.m__auto{
+.m__auto {
   margin: 0 auto;
-} 
-
-// BACKGROUND
-.container__bg__hero{
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: calc(100vh - 70px);
-  &Image{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7708333333333334) 11%, rgba(0,0,0,0.44870448179271705) 34%, rgba(255,255,255,0) 70%), url('https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_1500/v1690052347/download_thkeao.webp');
-    background-position: center center ;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
 }
+
 /*TIPOGRAFIA*/
 @import './scss/typography';
 

@@ -1,5 +1,4 @@
 function initializeScripts() {
- 
   const linksMenu = document.querySelectorAll(
     ".nav__list .list__item__link:not(a.list__item__logo)"
   );
@@ -220,19 +219,19 @@ function initializeScripts() {
   });
 
   const swiper2 = new Swiper(".swiper2", {
-    autoplay:{
-      delay:4000
+    autoplay: {
+      delay: 4000,
     },
     breakpoints: {
       // when window width is >= 320px
       370: {
         slidesPerView: 1,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 480px
       480: {
         slidesPerView: 3,
-        spaceBetween: 24
+        spaceBetween: 24,
       },
     },
     navigation: {
@@ -243,8 +242,6 @@ function initializeScripts() {
     spaceBetween: 24,
     loop: true,
   });
-
-
 
   //**GSAP */
   /**GSAP Animation Text (página sobre)*/
@@ -346,6 +343,7 @@ function initializeScripts() {
             trigger: ".videoclipe",
           },
         });
+
       }
       gsapInit();
     }
