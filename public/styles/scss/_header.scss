@@ -1,7 +1,7 @@
 // AREA HEADER
 .container__header {
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: $black;
   z-index: 2;
   position: relative;
 
@@ -69,22 +69,22 @@
     padding: .5rem 1rem;
     color: var(--color-content);
     position: relative;
-    color: $black;
+    color: $beige;
 
     &::before {
       content: "";
       position: absolute;
       bottom: 0;
-      height: 3px;
+      height: 1.5px;
       width: 0%;
       border-radius: 5px;
-      background-color: #636363;
+      background-color: rgba($beige__light, $alpha: 0.5);
       transition: all 0.5s ease;
     }
 
     &:hover,
     &.link__active {
-      color: #2f2e2e;
+      color:$beige__light;
 
       &::before {
         width: 70%;
@@ -112,7 +112,7 @@
 
   #hamburguer {
     border-top: 3px solid;
-    color: $black;
+    color: $beige;
     width: 25px;
     display: block;
     transition: .5s ease;

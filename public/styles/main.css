@@ -14,7 +14,8 @@
   scrollbar-color: #FEE9C0 #000;
 }
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
   width: 100%;
   height: 100vh;
@@ -90,24 +91,6 @@ ul {
   margin: 0 auto;
 }
 
-.container__bg__hero {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: calc(100vh - 70px);
-}
-.container__bg__heroImage {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7708333333) 11%, rgba(0, 0, 0, 0.4487044818) 34%, rgba(255, 255, 255, 0) 70%), url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_1500/v1690052347/download_thkeao.webp");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 /*TIPOGRAFIA*/
 @font-face {
   font-family: "MangoGrotesque";
@@ -139,7 +122,7 @@ a {
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
 }
 
 h1.titleMango {
@@ -320,7 +303,7 @@ button {
 /*HEADER MENU*/
 .container__header {
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #000;
   z-index: 2;
   position: relative;
 }
@@ -385,20 +368,20 @@ button {
   padding: 0.5rem 1rem;
   color: var(--color-content);
   position: relative;
-  color: #000;
+  color: #FEE9C0;
 }
 .nav__list .list__item__link:not(a.list__item__logo)::before {
   content: "";
   position: absolute;
   bottom: 0;
-  height: 3px;
+  height: 1.5px;
   width: 0%;
   border-radius: 5px;
-  background-color: #636363;
+  background-color: rgba(201, 182, 145, 0.5);
   transition: all 0.5s ease;
 }
 .nav__list .list__item__link:not(a.list__item__logo):hover, .nav__list .list__item__link:not(a.list__item__logo).link__active {
-  color: #2f2e2e;
+  color: #c9b691;
 }
 .nav__list .list__item__link:not(a.list__item__logo):hover::before, .nav__list .list__item__link:not(a.list__item__logo).link__active::before {
   width: 70%;
@@ -421,7 +404,7 @@ button {
 }
 .btn__mobile #hamburguer {
   border-top: 3px solid;
-  color: #000;
+  color: #FEE9C0;
   width: 25px;
   display: block;
   transition: 0.5s ease;
@@ -450,21 +433,29 @@ button {
 
 /*LAYOUT*/
 /*PAGINA HOME/INDEX*/
-.container__logo {
+.container__bg__hero {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  flex-grow: 1;
+  height: calc(100vh - 70px);
 }
-.container__logo .container__logo__pricipal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.container__bg__heroImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000 url("/images/bg__desktop.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.container__logo .container__logo__pricipal .logo__principal {
-  width: 210px;
-}
-.container__logo .container__icon__scroll {
-  padding: 2rem 1rem;
+.container__bg__hero .container__icon__scroll {
+  margin: 0 auto;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 }
 
 .container__main {
@@ -1320,10 +1311,14 @@ button {
     bottom: -130px;
   }
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 660px) {
+  .container__bg__hero {
+    height: 100%;
+  }
   .container__bg__heroImage {
-    background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7708333333) 15%, rgba(0, 0, 0, 0.4487044818) 40%, rgba(255, 255, 255, 0) 80%), url("https://res.cloudinary.com/dn7vmnw2j/image/upload/c_scale,q_auto:best,w_545/v1690051366/homePage/ihc2qf5hgahxckxnhv0c.webp");
-    background-size: cover;
+    background: #000 url("/images/bg__mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 .error__section {
