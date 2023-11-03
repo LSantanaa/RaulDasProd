@@ -56,7 +56,7 @@ export const home = async (req: Request, res: Response) => {
       savePubliInCache(dataPubli);
       console.log('Foi feita uma nova requisição para o banco.')
     }catch(error){
-      console.log('Não foi possível acessar o banco de dados', error)
+      console.error('Não foi possível acessar o banco de dados', error)
       
     }
   }else{
