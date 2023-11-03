@@ -42,6 +42,7 @@ const formatPubli = (publi:IDataUserMedia)=>{
 export const home = async (req: Request, res: Response) => {
   pageTitle = 'Home';
   let dataPubli;
+  let finalPubli;
   
   const cachedData = await getPubliFromCache();
   if (cachedData !== undefined) {
@@ -56,12 +57,14 @@ export const home = async (req: Request, res: Response) => {
       console.log('Foi feita uma nova requisição para o banco.')
     }catch(error){
       console.log('Não foi possível acessar o banco de dados', error)
+      
     }
   }else{
    console.log('Armazenamento em cache detectado.')
   }
-  
-  const finalPubli = await dataPubli.map(formatPubli)
+  if(dataPubli.length > 0){
+    finalPubli = await dataPubli.map(formatPubli) 
+  }
 
   res.render('pages/index', {
     dataCardVideo,

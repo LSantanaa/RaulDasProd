@@ -323,15 +323,14 @@
   }
 }
 
-@media screen and (max-width: 660px) {
-  .container__bg__hero{
-    height: 100%;
+@media screen and (max-width: 836px) {
+  .container__bg__hero {
     &Image {
-      background: $black url('/images/bg__mobile.png');
+      background: $black url('https://res.cloudinary.com/dn7vmnw2j/image/upload/f_webp/homePage/nrrlirtwetlthxpu16si.jpg');
       background-size: contain;
-    background-repeat: no-repeat;
-      
+      background-position: center;
+      background-repeat: no-repeat;
     }
-   
+
   }
 }
