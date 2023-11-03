@@ -10,27 +10,38 @@ import delCacheFromServer from './tasks/updateCache';
 
 dotenv.config()
 
-mongoConnect();
 
-const server = express()
+async function startServer() {
+  await mongoConnect();
+  updateToken();
+  updateUserMedia();
+  delCacheFromServer();
 
-updateToken();
-updateUserMedia();
-delCacheFromServer();
+  const server = express()
 
-server.use(express.static(path.join(__dirname, '../public')));
+  server.use(express.static(path.join(__dirname, '../public')));
 
-server.set('view engine', 'mustache');
-server.set('views', path.join(__dirname, 'views'));
-server.engine('mustache', mustache());
+  server.set('view engine', 'mustache');
+  server.set('views', path.join(__dirname, 'views'));
+  server.engine('mustache', mustache());
 
-server.use(mainRoutes);
+  server.use(mainRoutes);
 
-server.use((req, res)=>{
-  res.status(404).render('pages/error404');
-})
+  server.use((req, res) => {
+    res.status(404).render('pages/error404');
+  })
 
-server.listen(process.env.PORT || 8080, ()=>{
-  console.log('Servidor rodando')
-})
+  server.use(( req, res, next) => {
+    // console.error(err.stack);
+    res.status(500).send('Algo deu errado!');
+  });
+
+  server.listen(process.env.PORT || 8080, () => {
+    console.log('Servidor rodando')
+  })
+
+}
+
+startServer();
+
 
