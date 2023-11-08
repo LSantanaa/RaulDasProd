@@ -1,9 +1,7 @@
-import cron from 'node-cron';
 import { TokenModel } from '../Model/Schema/tokenSchema';
 import { refreshToken } from '../services/instaServices';
 
-export default function updateToken() {
-  const updateTokenInDB = async () => {
+export default async function updateToken() {
     try {
       const username = 'rauldasprod'
       const accessToken: any = await TokenModel.findOne({ user: username }).exec()
@@ -34,10 +32,4 @@ export default function updateToken() {
     } catch (error) {
       console.error('Erro ao atualizar o token:', error);
     }
-
-  }
-
-  cron.schedule('0 0 */5 * *', () => {
-    updateTokenInDB();
-  });
 }

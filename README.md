@@ -23,8 +23,6 @@ Layout: Raul Afonso e Leonardo de Sant Ana
 - GSAP (Animação ao scroll, animaçao de escrita)
 - ScrollReveal.js (Animação ao scroll)
 - Swipper.js(carousel)
-- Node Cron
-- Node Cache
 - Moment
 - Axios
 - Dotenv

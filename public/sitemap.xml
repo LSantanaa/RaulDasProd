@@ -25,14 +25,6 @@
         <lastmod>2023-06-29</lastmod>
         <changefreq>hourly</changefreq>
     </url>
-    
-    <url>
-        <loc>https://raul-das-prod.vercel.app/blog</loc>
-        <priority>0.4</priority>
-        <lastmod>2023-06-29</lastmod>
-        <changefreq>hourly</changefreq>
-    </url>
-    
 
     
 </urlset>
