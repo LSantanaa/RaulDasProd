@@ -6,7 +6,6 @@ import mainRoutes from './routes/index';
 import { mongoConnect } from './database/db';
 import updateToken from './tasks/updateUserToken';
 import updateUserMedia from './tasks/updateUserMedia';
-import delCacheFromServer from './tasks/updateCache';
 
 dotenv.config()
 
@@ -15,7 +14,6 @@ async function startServer() {
   await mongoConnect();
   updateToken();
   updateUserMedia();
-  delCacheFromServer();
 
   const server = express()
 

@@ -1,5 +1,5 @@
 User-Agent: *
-Disallow: /blog
+
 Allow: /
 Allow: /sobre
 Allow: /projetos
