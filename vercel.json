@@ -7,12 +7,18 @@
     }
   ],
   "routes": [
+    { "src": "/tasks/updateMedia", "dest": "src/tasks/updateUserMedia.ts" },
+    { "src": "/tasks/updateToken", "dest": "src/tasks/updateUserToken.ts" },
     { "src": "/(.*)", "dest": "src/server.ts" }
   ],
   "crons": [
     {
-      "path": "/src/tasks",
+      "path": "/tasks/updateMedia",
       "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/tasks/updateToken",
+      "schedule": "0 6 * * *"
     }
   ]
 }
