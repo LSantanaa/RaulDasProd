@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export const mongoConnect = async () => {
   try {
-    await mongoose.connect(`${process.env.MONGODB_URI}`, {
+    await mongoose.connect(`${process.env.MONGOLOCAL}`, {
       serverSelectionTimeoutMS: 600000,
     });
 
@@ -19,7 +19,7 @@ export const mongoConnect = async () => {
 
     db.on('disconnected', function () {
       console.log('MongoDB desconectado! Reconectando...');
-       mongoose.connect(`${process.env.MONGODB_URI}`, {
+       mongoose.connect(`${process.env.MONGOLOCAL}`, {
         serverSelectionTimeoutMS: 600000,
       });
     });

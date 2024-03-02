@@ -1,5 +1,5 @@
-import { TokenModel } from '../Model/Schema/tokenSchema';
-import { refreshToken } from '../services/instaServices';
+import { TokenModel } from '../../Model/Schema/tokenSchema';
+import { refreshToken } from '../../services/instaServices';
 
 export default async function updateToken() {
     try {

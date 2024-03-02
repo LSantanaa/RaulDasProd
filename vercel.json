@@ -13,11 +13,11 @@
   ],
   "crons": [
     {
-      "path": "/tasks/updateMedia",
-      "schedule": "0 5 * * *"
+      "path": "api/cron",
+      "schedule": "/5 * * * *"
     },
     {
-      "path": "/tasks/updateToken",
+      "path": "src/tasks/updateMedia",
       "schedule": "0 6 * * *"
     }
   ]

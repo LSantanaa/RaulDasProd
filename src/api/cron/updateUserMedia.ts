@@ -1,8 +1,10 @@
-import { UserMedia } from '../Model/Schema/userMediaSchema';
-import { TokenModel } from '../Model/Schema/tokenSchema';
-import { getUserData } from '../services/instaServices';
+import { UserMedia } from '../../Model/Schema/userMediaSchema';
+import { TokenModel } from '../../Model/Schema/tokenSchema';
+import { getUserData } from '../../services/instaServices';
 
-export default async function updateUserMedia() {
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default async function updateUserMedia(request: VercelRequest,response: VercelResponse,) {
   try {
     const user = 'rauldasprod'
     const accessToken: any = await TokenModel.findOne({ user }).exec()
