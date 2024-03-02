@@ -13,12 +13,8 @@
   ],
   "crons": [
     {
-      "path": "api/cron",
+      "path": "/api/cron",
       "schedule": "/5 * * * *"
-    },
-    {
-      "path": "src/tasks/updateMedia",
-      "schedule": "0 6 * * *"
     }
   ]
 }
