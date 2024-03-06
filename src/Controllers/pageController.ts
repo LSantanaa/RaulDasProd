@@ -6,6 +6,7 @@ import { IDataUserMedia, UserMedia } from "../Model/Schema/userMediaSchema";
 import { getPubliFromCache, savePubliInCache } from "../services/cacheService";
 import moment from "moment";
 import 'moment/locale/pt-br';
+import updateUserMedia from "../api/cron/updateUserMedia";
 moment.locale('pt-br');
 
 
@@ -41,6 +42,7 @@ const formatPubli = (publi:IDataUserMedia)=>{
 
 export const home = async (req: Request, res: Response) => {
   pageTitle = 'Home';
+  
   let dataPubli;
   let finalPubli;
   
@@ -65,6 +67,8 @@ export const home = async (req: Request, res: Response) => {
   if(dataPubli.length > 0){
     finalPubli = await dataPubli.map(formatPubli) 
   }
+
+  updateUserMedia();
 
   res.render('pages/index', {
     dataCardVideo,

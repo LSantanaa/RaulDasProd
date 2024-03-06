@@ -1,10 +1,8 @@
 import { UserMedia } from '../../Model/Schema/userMediaSchema';
 import { TokenModel } from '../../Model/Schema/tokenSchema';
-import { getUserData } from '../../services/instaServices';
+import { getUserData, saveUserDataToDatabase } from '../../services/instaServices';
 
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-export default async function updateUserMedia(request: VercelRequest,response: VercelResponse,) {
+export default async function updateUserMedia() {
   try {
     const user = 'rauldasprod'
     const accessToken: any = await TokenModel.findOne({ user }).exec()
@@ -15,8 +13,10 @@ export default async function updateUserMedia(request: VercelRequest,response: V
     userMediaData.username = username;
     userMediaData.data = mediaData.slice(0, 6);
 
+    
     console.log('Atualizando postagens no banco de dados')
     await userMediaData.save();
+    saveUserDataToDatabase(userMediaData.username, userMediaData.data)
     console.log('Postagens Atualizadas!')
     
   } catch (error) {

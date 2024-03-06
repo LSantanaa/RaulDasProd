@@ -20,7 +20,6 @@ export const refreshToken = async (accessToken: string)=>{
   return tokenResponse;
 }
 
-
 //salva a midia no banco
 export const saveUserDataToDatabase = async (username: string, mediaData: any) =>{
   const newUserMedia = new UserMedia({
